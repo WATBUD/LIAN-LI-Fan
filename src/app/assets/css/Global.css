@@ -1,0 +1,213 @@
+#SybcOnUI{
+    height: 57.16%;
+    width: 16.84%;
+    background-size: 100% 100%;
+    background-image: url('/image/Share/OnOffUI_1.png');
+    pointer-events: auto;
+    margin-left: 10%;
+}
+#UItext_isOnOf{
+    line-height: 2.5%;
+    margin-left: 10%;
+}
+#SyncOnOffArea{
+    justify-content: center;
+    height: 5.6%;
+    width: 19%;
+    align-items: center;
+    pointer-events: auto;
+    display: flex;
+    position: absolute;
+    bottom: 2%;
+    left: 2%;
+    font-size: 2.2%;
+    white-space: nowrap;
+}
+
+.ZoomOut{
+    background-color: transparent;
+    /* background-image:url('/image/Share/ZoomOut.png'); */
+
+}
+.ZoomOut:hover{
+    /* background-image:url('/image/FanMode/ZoomOut.png'); */
+    background-color: #17beff;
+
+}
+
+.ZoomIn{
+    /* background-image:url('/image/Share/Off/ZoomIn.png'); */
+    background-color: transparent;
+}
+.ZoomIn:hover{
+    /* background-image:url('/image/Share/On/ZoomIn.png'); */
+    background-color: #17beff;
+}
+.closeProgram{
+    /* background-image:url('/image/Share/Off/closeProgram.png'); */
+    background-color: transparent;
+}
+.closeProgram:hover{
+    /* background-image:url('/image/Share/On/closeProgram.png'); */
+    background-color: #ff3c1d;
+}
+#ZoomAppList {
+    position: absolute;
+    height: 6%;
+    width: 10.8%;
+    display: flex;
+    right: 0;
+    z-index: 9999;
+    /* background: red; */
+}
+    
+#ZoomAppList div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33.4%;
+    height: 86.7%;
+} 
+
+
+
+#ImportExportUI{
+    justify-content: center;
+    height: 5.1%;
+    width: 7%;
+    align-items: center;
+    pointer-events: auto;
+    display: flex;
+    position: absolute;
+    right: 12%;
+    top: 7%;
+    border: 1px solid #3C495B;
+    background: #2C3647;
+    border-bottom: none;
+    border-radius: 3px 3px 1px 1px;
+}
+
+#ImportExportUI:hover{
+    background-color: #17beff;
+
+}
+#ImportExportUI #ImportIcon{   
+    height: 64%;
+    width: 25%;
+    background-size: 100% 100%;
+}
+
+#ImportExportUI #ExportIcon{   
+    height: 64%;
+    width: 25%;
+    background-size: 100% 100%;
+}
+
+
+
+
+
+
+#ImportExportUI #UIText{ 
+    height: 80%;
+    width: 63%;
+    /* background: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2%;
+    margin-left: 0.5%;
+}
+.SharedMask{
+    position: absolute;
+    pointer-events: auto;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.63);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#SharedMask{
+    position: absolute;
+    pointer-events: auto;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.63);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#SharedMask .NoticeUI{   
+    position: absolute;
+    height: 56%;
+    width: 40%;
+    border: 0.3% solid #17beff;
+    background: #171f33;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#SharedMask .NoticeUI_OK{    
+    position: absolute;
+    height: 5%;
+    width: 4%;
+    background: #2c3647;
+    color: white;
+    font-size: 2.2%;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 8%;
+}
+#SharedMask .NoticeUI_Icon{
+    background-image: url('/image/Share/TipIcon.png');
+    top: 6%;left: 6%;
+    background-size: 100% 100%;
+    position: absolute;
+    height: 3.3%;
+    width: 3.3%;
+    color: white;
+    font-size: 2.2%;
+    border-radius: 1%;
+}
+#SharedMask .NoticeUI_Title{
+    position: absolute;
+    height: 3.1%;width: 4.3%;
+    color: #17beff;
+    font-size: 3%;
+    border-radius: 1%;
+    display: flex;/* background: red; */
+    justify-content: center;
+    align-items: center;top: 7.4%;left: 14%;
+}
+
+#SharedMask .NoticeUI_Content{
+    height: 23.1%;
+    width: 82%;
+    color: #FFFFFF;
+    font-size: 2.4%;
+    border-radius: 1%;
+    line-height: 4%;
+    /* background: red; */
+}
+#SettingBtn{
+    height: 5.1%;
+    width: 4.1%;
+    pointer-events: auto;
+    position: absolute;
+    right: 12%;
+    background-size: 100% 100%;
+    background-image: url('/image/Share/Off/SettingIcon.png');
+}
+#SettingBtn:hover{
+    background-image: url('/image/Share/On/SettingIcon.png');
+}
+
+
+
+.UITextColor{
+    color:#CCCCCC;
+}

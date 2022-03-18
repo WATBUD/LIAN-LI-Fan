@@ -1,0 +1,19 @@
+{
+    "/upload": {
+      "target": "https://www.adata.com/",
+      "secure": false,
+      "logLevel": "debug",
+      "changeOrigin": true
+    }
+    ,
+    "/?format=json": {
+      "target": "https://api.ipify.org/",
+      "secure": false,
+      "logLevel": "debug",
+      "changeOrigin": true
+    }
+
+    
+
+
+}

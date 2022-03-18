@@ -1,0 +1,365 @@
+<div id="bodySideAreaUp" >
+    <div *ngFor="let item of FanSettingArrayData; let i = index" id="fanGroup{{i}}" 
+    [style.border]="this.fanGroupIndex==i && !this.FanSetting.gradient.getMode().isSync?'1px solid #17beff':''" 
+    [style.background]="this.FanSetting.gradient.getMode().isSync&&this.FanSetting.gradient.getMode().chooseGroup==i?'#363C52':''" 
+    class="FanGroupStyle" (mousedown)="fanGroupOnClick(i)">
+    <div class="FanImageDefault">
+        <div class="fanGroupTrapezoid{{i}} PolygonFanUp" style="left: 3%;"></div>
+        <div class="fanGroupTrapezoid{{i}} PolygonFanUp" style="left: 11.1%;"></div>
+        <div class="fanGroupTrapezoid{{i}} PolygonFanUp" style="left: 19%;"></div>
+        <div class="fanGroupTrapezoid{{i}} PolygonFanUp" style="left: 26.9%;"></div>
+        <div class="fanGroupTrapezoid{{i}} PolygonFanDown" style="left:3%;"></div>
+        <div class="fanGroupTrapezoid{{i}} PolygonFanDown" style="left: 11.1%;"></div>
+        <div class="fanGroupTrapezoid{{i}} PolygonFanDown" style="left: 19%;"></div>
+        <div class="fanGroupTrapezoid{{i}} PolygonFanDown" style="left: 26.9%;"></div>
+    </div>
+    <div id="文字區塊" class="GroupTextAreaStyle">
+        <div style="margin-left: 1.6%;font-size: 2%;">#{{i+1}}</div>
+        <div class="GroupFanTextStyle">
+        </div>
+        <div style="margin-left: 0.6%;">
+            {{i18nManager.getTarget('FAN_MODE_LIST')[FanSettingArrayData[i].fanMode]}}
+        </div>
+        <div class="GroupLedTextStyle">
+        </div>
+        <div style="margin-left: 0.6%;">{{show_i18n_ModeName(this.FanSettingArrayData[i].gradient.gradientMode)}}</div>
+        <div class="GroupRPMTextIcon">
+        </div>
+        <div class="GroupRPMTextStyle">
+            <span>{{motherBoardFanValue[controller_index][i]+" "+i18nManager.getTarget('RPM')}}</span>
+        </div>
+    </div>
+
+
+
+    </div>
+
+</div>
+<div id="OutSideFrame" [style.border]="this.FanSetting.gradient.getMode().isSync?'2px solid #17beff':''">
+</div>
+<div id="bodySideAreaDown">
+    <section id="FAN setting" style="height: 100%;
+    width: 25.4%;">
+        <div data-Title="Fan_Title_text" style="width: 1.2%;
+        height: 1.2%;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-image: url(./image/FanMode/FanMode_Icon_Blue.png);
+        pointer-events: none;
+        position: absolute;
+        top: 1.9%;
+        left: 4%;">
+            <div class="UITextColor" style="position: absolute;
+                margin-left: 2.1%;
+                width: 8%;
+                background-color: transparent;
+                font-size: 2.5%;height: 1.2%; line-height: 1.2%;">
+                {{i18nManager.getTarget('FAN_MODE')}}
+            </div>
+        </div>
+        <div *ngIf="FanSetting.fanMode>0" id="FanInputs">
+            <div class="FanBarBG"></div>
+            <div id="FanBgclip" class="FanOverBar" [style.clipPath]="returnRPMValuePolygonClip()"
+                [style.backgroundSize]="'100% 100%'">
+            </div>
+            <input id="FanSlider" class="FanOverBar" type="range" min="800" max="1900" step="110"
+                [(ngModel)]="FanSetting.fanRPMValue" [style.pointer-events]="FanSetting.fanMode!=4?'none':'auto'"
+                (ngModelChange)="updateFanSliderWidth(); FanSetting.fanMode==4?fanApplyEnable=true:fanApplyEnable=false">
+            <!-- 文字 -->
+            <img src="./image/FanMode/Down_RPM_Icon.png" style="    width: 1.6%;
+                                height: 2.1%;
+                                position: absolute;
+                                top: 23.1%;
+                                left: 2.5%;">
+            <div style="position: absolute;
+                                    text-transform: uppercase;
+                                    color: #17beff;
+                                    font-size: 5%;
+                                    left: 5.9%;
+                                    width: 7.7%;
+                                    margin-top: 22.6%;">{{FanSetting.fanRPMValue}}</div>
+            <div class="UITextColor" style="font-size: 2.4%;
+                                    text-transform: uppercase;
+                                    height: 20px;
+                                    position: absolute;
+                                    left: 13.1%;
+                                    width: 7.7%;
+                                    margin-top: 23.2%;
+                                    ">{{i18nManager.getTarget('RPM')}}
+            </div>
+        
+        </div>
+
+        <!-- *ngIf="fanModeDropDown"  -->
+        <div style="height: 18.5%;" [style.display]="fanModeDropDown?'block': 'none'" data-Title="Frameline" class="Frameline">
+            <div class="dropsdownBox">
+                <a class='cursor hoveritem' *ngFor="let item of i18nManager.getTarget('FAN_MODE_LIST'); let i = index"
+                    (click)='chooseFanMode(i)'   
+                    (mouseenter)="DPBhover1='DPB'+i" (mouseleave)="DPBhover1='DPB'"
+                    [style.background-color]="this.FanSetting.fanMode==i||DPBhover1=='DPB'+i?'#363C52':'transparent'">{{item}}</a>
+            </div>
+        </div>
+        <div id="FanModeDrop" class="cursor ModeDropStyle" 
+        [style.backgroundImage]="fanModeDropDown? ImagePath.FANModeDropPng[1]:ImagePath.FANModeDropPng[0]"
+        (click)="fanModeDropDown=!fanModeDropDown"> {{"&emsp;"+i18nManager.getTarget('FAN_MODE_LIST')[FanSetting.fanMode]}}
+        </div>
+
+        <div *ngIf="fanApplyEnable">
+            <div id="FanAreaBtn1" class="BtnDefault ApplyUI" (click)="FanAreaApplyBtn('FAN')">
+                {{i18nManager.getTarget('PREVIEW_APPLY')}}
+            </div>
+            <div id="FanAreaBtn2" class="BtnDefault ApplyAllUI" (click)="FanAreaApplyBtn('FAN','All')">
+                {{i18nManager.getTarget('PREVIEW_APPLYALL')}}
+            </div>
+        </div>
+    
+    </section>
+    <section id="LED_Setting_Mode" style="position: absolute;top: 0px;left: 25%;width: 24.5%;height: 100%;">
+        <section [style.display]="!this.FanSetting.gradient.getMode().isSync?'flex': 'none'" id="SL_LPB">
+            <div class="cursor LedPartbuttons">
+                <p class="ConcatenationBtnIndex">#{{this.fanGroupIndex+1}}</p>
+                <div *ngFor="let item of FanSetting.gradient.getMode().LEDConcatenation; let i = index" 
+                class="LPB_Content" 
+                    [style.background-color]="item?'#17BEFF':'transparent'"
+                    [style.border]="item?'0px solid #17beff':'1px solid #3c495b'"
+                    (mousedown)="ledConcatenation(i)">
+                    <p class="ConcatenationBtnText"
+                        [style.color]="item? ImagePath.LedPartbtnColor[0] : ImagePath.LedPartbtnColor[1]">
+                        {{textCollection.TextLedPartbtn[i]}}
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- [style.backgroundImage] -->
+        <section [style.display]="this.FanSetting.gradient.getMode().isSync?'flex': 'none'" id="SL_SyncLPB">
+            <div *ngFor="let item of FanSetting.gradient.getMode().syncConcatenation; let i = index" class="cursor LedPartbuttons">
+                <p class="ConcatenationBtnIndex" >#{{i+1}}</p>                            
+                <div class="LPB_Content"
+                    [style.border]="item>-1?'0px solid #17beff':'1px solid #3c495b'"                                 
+                    [style.background-color]="item>-1?'#17BEFF':'transparent'"
+                    (click)="FanSetting.gradient.getMode().setConcatenation(i,0)">
+                    <p class="ConcatenationBtnText"
+                        [style.color]="item>-1?ImagePath.LedPartbtnColor[0] : ImagePath.LedPartbtnColor[1]">
+                        {{textCollection.TextLedPartbtn[0]}}
+                    </p>
+                </div>
+                <div class="LPB_Content" 
+                    [style.border]="item>0?'0px solid #17beff':'1px solid #3c495b'"
+                    [style.background-color]="item>0?'#17BEFF':'transparent'"
+                    (click)="FanSetting.gradient.getMode().setConcatenation(i,1)">
+                    <p class="ConcatenationBtnText"
+                        [style.color]="item>0 ? ImagePath.LedPartbtnColor[0] : ImagePath.LedPartbtnColor[1]">
+                        {{textCollection.TextLedPartbtn[1]}}
+                    </p>
+                </div>
+                <div class="LPB_Content" 
+                    [style.border]="item>1?'0px solid #17beff':'1px solid #3c495b'"
+                    [style.background-color]="item>1?'#17BEFF':'transparent'"
+                    (click)="FanSetting.gradient.getMode().setConcatenation(i,2)">
+                    <p class="ConcatenationBtnText"
+                        [style.color]="item>1 ? ImagePath.LedPartbtnColor[0] : ImagePath.LedPartbtnColor[1]">
+                        {{textCollection.TextLedPartbtn[2]}}
+                    </p>
+                </div>
+                <div class="LPB_Content" 
+                    [style.border]="item>2?'0px solid #17beff':'1px solid #3c495b'"
+                    [style.background-color]="item>2?'#17BEFF':'transparent'"
+                    (click)="FanSetting.gradient.getMode().setConcatenation(i,3)">
+                    <p class="ConcatenationBtnText" 
+                        [style.color]="item>2? ImagePath.LedPartbtnColor[0] : ImagePath.LedPartbtnColor[1]">
+                        {{textCollection.TextLedPartbtn[3]}}
+                    </p>
+                </div>  
+            </div>
+        </section>
+
+        <div data-Title="LED_Title_text" style="    width: 11.3%;
+                            height: 3.5%;
+                            pointer-events: none;
+                            position: absolute;
+                            top: 1.9%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            left: 3%;">
+            <div data-title="LED_Title_icon" style="
+                            width: 1.3%;
+                            height: 1.8%;
+                            background-size: 100% 100%;
+                            background-image: url(./image/FanMode/LedMode_Icon_Blue.png);
+                            margin-right: 0.6%;
+                            margin-bottom: 0.5%;
+                            ">
+            </div>
+            <div class="UITextColor" style="    width: 8%;
+                                background-color: transparent;
+                                font-size: 2.5%;
+                                height: 1.2%;
+                                line-height: 1.5%;">
+                {{i18nManager.getTarget('LED_MODE')}}
+            </div>
+        </div>
+        <!-- *ngIf="LEDModeDropDown" -->
+        <div [style.display]="LEDModeDropDown?'block': 'none'" data-Title="Frameline" class="Frameline">
+            <div class="dropsdownBox">
+                <a class="cursor hoveritem" *ngFor="let item of i18nManager.getTarget('FAN_MODEF_LIST'); let i = index"
+                    (click)="chooseLedMode(i)"
+                    (mouseenter)="DPB_Led_hover1='DPB'+i" (mouseleave)="DPB_Led_hover1='DPB'"
+                    [style.background-color]="this.FanSetting.gradient.gradientMode==i||DPB_Led_hover1=='DPB'+i?'#363C52':'transparent'">{{item}}</a>
+            </div>
+        </div>
+        <div id="LedModeDrop" class="cursor ModeDropStyle"
+            [style.backgroundImage]="LEDModeDropDown?ImagePath.FANModeDropPng[1]:ImagePath.FANModeDropPng[0]"
+            (click)="LEDModeDropDown=!LEDModeDropDown;">
+            {{"&emsp;"+show_i18n_ModeName(FanSetting.gradient.gradientMode)}}
+        </div>
+    
+    
+    </section>
+    <section id="LED_Setting_color" style="position: absolute; top: 0px; left: 49.8%;
+    width: 24.5%;height: 100%;">
+        <div id="LED setting color " *ngIf="FanSetting.gradient.getColorUIVisible()>0">
+        
+            <input id="ColorSliderH" type="range" min="0" max="359" step="1" [(ngModel)]="_Global.getColorTarget().Hue"
+                (ngModelChange)='colorControl()'>
+            <input id="ColorSliderS" type="range" min="0" max="100" step="1" [ngStyle]="connectSBGcolor()"
+                [(ngModel)]="_Global.getColorTarget().Saturation" (ngModelChange)='colorControl()'>
+            <input id="ColorSliderV" [ngStyle]="connectVBGcolor()" type="range" min="0" max="100" step="1"
+                [(ngModel)]="_Global.getColorTarget().Value" (ngModelChange)='colorControl()'>
+        
+                <div id="DefulatColorArea" style="    position: absolute;
+                top: 10.8%;
+                left: 9.7%;
+                width: 16%;
+                height: 9%;
+                display: flex;
+                /* background: red; */
+                flex-wrap: wrap;  
+                        ">
+                    <div *ngFor="let item of _Global.colorArrays; let i = index"
+                        (mousedown)="_Global.colorRecordIndex=i" class="_GlobalColorArrays"
+                        [style.border]="_Global.colorRecordIndex==i?'1px solid #17beff':''">
+                        <div id="colorBase{{i}}" style="width: 80%; height: 80%; background-color: rgb(255, 0, 0)"
+                            [style.background-color]="item.getColorFormat_RGB()">
+                        </div>
+                    </div>
+                    <div class="_GlobalColorArrays" style="margin-left: 2%;">
+                        <div id="ReSetDefault" style="    background-size: 100% 100%;
+                                    background-image: url(./image/Share/Off/ReSetDefault.png);
+                                    display: flex;
+                                    width: 80%; height: 80%; 
+                                    justify-content: center;
+                                    align-items: center;
+                                    box-sizing: border-box;" (click)="_Global.reSetAllDefaultColor()" (mouseenter)="ReSetDefault_Enter=true;"
+                            (mouseleave)="ReSetDefault_Enter=false;"
+                            [style.backgroundImage]="ReSetDefault_Enter? ImagePath.ReSetDefault[0]:ImagePath.ReSetDefault[1]">
+                        </div>
+                    </div>
+                    
+                </div>
+            <div id='colorRecordArea'>
+                <div id='RAF1' class="RecordAreaFrame" (click)="onclickColorDefault(0)"
+                    [style.background-color]="this.FanSetting.gradient.getMode().colorArrays[0].Hex">
+                    <!-- <div class="HSBText">
+                            H:{{this.FanSetting.gradient.getMode().colorArrays[3].Hue}}° S:{{this.FanSetting.gradient.getMode().colorArrays[3].Saturation}}%
+                            B:{{this.FanSetting.gradient.getMode().colorArrays[3].Value}}%
+                        </div> -->
+                </div>
+                <div *ngIf="FanSetting.gradient.getColorUIVisible()>1" id='RAF2' class="RecordAreaFrame"
+                    (click)="onclickColorDefault(1)"
+                    [style.background-color]="this.FanSetting.gradient.getMode().colorArrays[1].Hex">
+                </div>
+                <div *ngIf="FanSetting.gradient.getColorUIVisible()>2" id='RAF2' class="RecordAreaFrame"
+                    (click)="onclickColorDefault(2)"
+                    [style.background-color]="this.FanSetting.gradient.getMode().colorArrays[2].Hex">
+                </div>
+                <div *ngIf="FanSetting.gradient.getColorUIVisible()>3" id='RAF2' class="RecordAreaFrame"
+                    (click)="onclickColorDefault(3)"
+                    [style.background-color]="this.FanSetting.gradient.getMode().colorArrays[3].Hex">
+        
+                </div>
+                <div id="colorSelectAll" style="
+                background-image: url(./image/Share/Off/ColorSelectAll.png);   
+                width: 2.92%;height: 2.92%;
+                background-size: 100% 100%; "
+                (click)="onclickColorDefault('All')"  
+                (mouseenter)="ColorSelectAll_Enter=true;" (mouseleave)="ColorSelectAll_Enter=false;"
+                [style.backgroundImage]="ColorSelectAll_Enter? ImagePath.ColorSelectAll[0]:ImagePath.ColorSelectAll[1]">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="BtnDefault DefaultApply" (click)="LEDAreaDefault()">{{i18nManager.getTarget('PREVIEW_DEFAULT')}}
+        </div>
+        <div class="BtnDefault ColorApply" (click)="LEDAreaApplyBtn('LED3Area')">{{i18nManager.getTarget('PREVIEW_APPLY')}}
+        </div>
+
+    </section>
+    <section id="setting speed bright And direction" class="SpeedBrightDircetion">
+        <div style=" margin-left: 1.5%;height: 1.7%;"></div>
+        <div *ngIf="this.FanSetting.gradient.getSBDShowList()[0]" (mouseenter)="hover1=true" (mouseleave)="hover1=false" class="FrameDefault"
+            style="display:inline-block;margin-left: 1.5%; margin-top: 1%">
+            <span class="SPDTitleText UITextColor">{{i18nManager.getTarget('PREVIEW_SPEED')}}
+            </span>
+            <span  style="margin-left: 12.6%; position: absolute;color: #17beff;font-size: 3%;
+                         line-height: 3.9%;margin-top: 2.6%;/* background: blue; */">{{(FanSetting.gradient.getMode().speed/4)*100}}%
+            </span>
+            <input id="InputSpeed" type="range" min="0" max="4" step="1" [(ngModel)]="FanSetting.gradient.getMode().speed"
+                [style.backgroundSize]="FanSetting.gradient.getMode().speed*25+'% 100%'">
+        </div>
+        <div  *ngIf="this.FanSetting.gradient.getSBDShowList()[0]" 
+        style="display: inline-block;
+        margin-left: 1.5%;
+        width: 15.5%;
+        height: 1.5%;">               
+        </div>
+        <div *ngIf="this.FanSetting.gradient.getSBDShowList()[1]" (mouseenter)="hover2=true" (mouseleave)="hover2=false" class="FrameDefault"
+            style="display:inline-block;margin-left: 1.5%;">
+
+            <span class="SPDTitleText UITextColor">{{i18nManager.getTarget('PREVIEW_BRIGHTNESS')}}</span>
+            <span style="margin-left: 12.6%; position: absolute;color: #17beff;font-size: 3%;line-height: 3.9%;
+            margin-top: 2.6%;/* background: blue; */">{{(FanSetting.gradient.getMode().bright/4)*100}}%
+            </span>
+            <input id="InputBright" type="range" min="0" max="4" step="1" [(ngModel)]="FanSetting.gradient.getMode().bright"
+                [style.backgroundSize]="FanSetting.gradient.getMode().bright*25+'% 100%'">
+        
+        
+        
+        </div>
+        <div *ngIf="this.FanSetting.gradient.getSBDShowList()[1]" 
+        style="display: inline-block;
+        margin-left: 1.5%;
+        width: 15.5%;
+        height: 1.5%;">               
+        </div>
+        <div *ngIf="this.FanSetting.gradient.getSBDShowList()[2]" 
+            (mouseenter)="hover3=true" (mouseleave)="hover3=false" class="FrameDefault"
+            style="display:block;margin-left: 8%;" >
+            <span class="SPDTitleText UITextColor">{{i18nManager.getTarget('PREVIEW_DIRECTION')}}</span>
+            <div id="dirBgNormalL" style="display: inline-block;
+            margin-left: 1%;margin-top: 4%;
+            background-size: 100% 100%;
+            width: 5.5%;
+            height: 2.8%;"
+                [style.backgroundImage]="FanSetting.gradient.getMode().direction==1? ImagePath.dirBgNormalL[0]:ImagePath.dirBgNormalL[1]"
+                (mousedown)="FanSetting.gradient.getMode().direction=1">
+            </div>
+            <div id="dirBgNormalR" style="display: inline-block;
+            margin-left: 8%;
+            margin-top: 11.5%;
+            background-size: 100% 100%;
+            width: 5.5%;
+            height: 2.8%;"
+            
+                [style.backgroundImage]="FanSetting.gradient.getMode().direction==2? ImagePath.dirBgNormalR[0]:ImagePath.dirBgNormalR[1]"
+                (mousedown)="FanSetting.gradient.getMode().direction=2">
+            </div>
+
+        </div>
+        <div [style.display]="!this.FanSetting.gradient.getMode().isSync?'block': 'none'" class="BtnDefault ApplyLong" (click)="LEDAreaApplyBtn('LED3Area','All')">
+            {{i18nManager.getTarget('PREVIEW_APPLYALL')}}
+        </div>
+
+    </section>
+</div>

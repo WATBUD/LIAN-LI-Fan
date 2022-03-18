@@ -1,0 +1,364 @@
+
+<div id="wrapper" onDRAGSTART="window.event.returnValue=false" onCONTEXTMENU="window.event.returnValue=false"
+    onSelectStart="window.event.returnValue=false" draggable="true" (mouseup)="GetMouseClickObjData($event)"
+    (click)="checkDrop($event)">
+    <div id="dragAreaTop"></div>
+    <!-- 背景圖 -->
+    <div id="ZoomAppList">
+        <div class="cursor ZoomOut" (click)="changeWinSystemTaskBar('minimize')">
+            <img style="width:38%;" src="./image/Share/ZoomOut.png">
+        </div>
+        <div class="cursor ZoomIn" (click)="changeWinSystemTaskBar('maximize')">
+            <img style="width:38%;" src="./image/Share/ZoomIn.png">
+        </div>
+        <div class="cursor closeProgram" (click)="changeWinSystemTaskBar('leave')">
+            <img style="width:38%;" src="./image/Share/closeProgram.png">
+        </div>
+    </div>
+    <div id="ShowLoadingMessage" style="position: absolute;height: 100%;z-index: 9999;width: 100%;  
+    margin-top: 0;background: #0000008a;" [style.display]="onLoading?'block':'none'">
+        <img src="./image/Share/Loading.gif" alt="Loading.gif" style="position: absolute;left: 48%;top: 47%;" />
+    </div>
+    <section id="NAV_TOP_UI"
+        style="color: white;z-index: 9990;position: absolute;width: 100%;height: 100%;pointer-events: none;"
+        [style.color]="GlobalManager.fanisOnOff?'white':'#b3b3b4'">
+        <div data-identity="SettingBtn" id="SettingBtn" (click)="switchSettingPage(true)">
+        </div>
+        <div id="ImportExportUI" data-identity="Export" (click)="ExportProfile()" (mouseenter)="ExportUIEnter=true;"
+            (mouseleave)="ExportUIEnter=false;">
+            <div id="ExportIcon"
+                [style.backgroundImage]="ExportUIEnter? ImagePath.ExportIcon[0]:ImagePath.ExportIcon[1]">
+            </div>
+            <div id="UIText" [style.color]="ExportUIEnter?'#FFFFFF':'#C9CACA'">
+                Export
+            </div>
+        </div>
+        <div id="ImportExportUI" data-identity="Import" style="right: 3.8%;" (click)="ImportProfile()"
+            (mouseenter)="ImportUIEnter=true;" (mouseleave)="ImportUIEnter=false;">
+            <div id="ImportIcon"
+                [style.backgroundImage]="ImportUIEnter? ImagePath.ImportIcon[0]:ImagePath.ImportIcon[1]">
+            </div>
+            <div id="UIText" [style.color]="ImportUIEnter?'#FFFFFF':'#C9CACA'">
+                Import
+            </div>
+        </div>
+        <div id="fanisOnOff_SharedMask" class="SharedMask" [style.display]="GlobalManager.fanisOnOff?'flex':'none'">
+        </div>
+        <div *ngIf="GlobalManager.Notice_Mes.ConnectError"  data-identity="ConnectError" id="SharedMask" style="z-index: 9999;">
+            <div id="ConnectTip_img" style="width: 96.5%;
+            height: 94%;
+            background-image: url(./image/Share/ConnectTip.png);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-size: 100% 100%;">
+            
+            <div [innerHtml]="this.i18nManager.getTarget('ConnectError1')" style="margin-top: -33%;
+            text-align: center;
+            margin-left: -0.9%;
+            line-height: 3%;
+            font-size: 2.4%;">
+            </div>
+            <div (click)="HyperLinkGO(0)" style="    position: absolute;
+            text-decoration: underline;
+            margin-top: -12.8%;
+            text-align: center;
+            margin-left: -0.9%;
+            line-height: 3%;
+            font-size: 2.4%;">
+                {{this.i18nManager.getTarget('HyperLink')}}
+            </div>
+            <div [innerHtml]="this.i18nManager.getTarget('ConnectError2')" style="position: absolute;
+            margin-top: -9.3%;
+            text-align: center;
+            margin-left: -0.9%;
+            line-height: 3%;
+            font-size: 2.4%;">
+            </div>
+                <div id="ConnectTip_Title" 
+                style="position: absolute;
+                color: #17beff;
+                font-size: 3%;
+                border-radius: 1%;
+                top: 11.7%;
+                left: 49%;
+                display: flex;
+                justify-content: center;
+                align-items: center;">{{i18nManager.getTarget('Notice')}}
+                </div>
+                <div id="ControllerRestart" class="BtnDefault" style="position: absolute;
+                bottom: 9%;
+                left: 29%;
+                width: auto;
+                height: 4.3%;
+                padding-left: 2%;
+                padding-right: 2%;
+                display: flex;
+                align-items: center;" (click)="RestartApp()">
+                    {{i18nManager.getTarget('ControllerRestart')}}
+                </div>
+                <div  id="Quit" class="BtnDefault" style="    position: absolute;
+                bottom: 9%;
+                left: 59%;
+                width: auto;
+                height: 4.3%;
+                padding-left: 1.4%;
+                padding-right: 1.5%;
+                display: flex;
+                align-items: center;" (click)="QuitApp()">
+                    {{i18nManager.getTarget('Quit')}}
+                </div>
+                
+            </div>
+
+        </div>
+        <div *ngIf="GlobalManager.Notice_Mes.InitExportTip" data-identity="InitExportTip" id="SharedMask" >
+            <div class="NoticeUI">
+                <div class="NoticeUI_OK" (mouseenter)="NoticeOKleave=true;"
+                    (mouseleave)="NoticeOKleave=false;SharesFN.logCustom('NoticeOKleave',NoticeOKleave);"
+                    (click)="closeUITip('InitExportTip')" [style.background-color]="NoticeOKleave==true?'#17beff':'#2c3647'">
+                    {{i18nManager.getTarget('OK')}}
+                </div>
+                <div class="NoticeUI_Icon"></div>
+                <div class="NoticeUI_Title">{{this.i18nManager.getTarget('Notice')}}</div>
+                <div class="NoticeUI_Content">       
+                    <span [innerHtml]="this.i18nManager.getTarget('InitExportTip')" ></span>
+                    <div style="align-items: center;display: flex;margin-top: 1%;">
+                        <input type="checkbox" [(ngModel)]="GlobalManager.SettingData.notShowAgainExport" />
+                        <span
+                            style="margin-left: 2%;font-size: 2.1%;">{{this.i18nManager.getTarget('DoNotShowAgain')}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-identity="StaticMax48Tip" id="SharedMask" [style.display]="GlobalManager.Notice_Mes.StaticMax48Tip?'flex':'none'">
+            <div class="NoticeUI">
+                <div class="NoticeUI_OK" (mouseenter)="NoticeOKleave=true;"
+                    (mouseleave)="NoticeOKleave=false;SharesFN.logCustom('NoticeOKleave',NoticeOKleave);"
+                    (click)="closeUITip('StaticMax48Tip')" [style.background-color]="NoticeOKleave==true?'#17beff':'#2c3647'">
+                    {{i18nManager.getTarget('OK')}}
+                </div>
+                <div class="NoticeUI_Icon"></div>
+                <div class="NoticeUI_Title">{{this.i18nManager.getTarget('Notice')}}</div>
+                <div class="NoticeUI_Content">       
+                    <span [innerHtml]="this.i18nManager.getTarget('StaticMax48Tip')" ></span>
+                    <div style="align-items: center;display: flex;margin-top: 1%;">
+                        <input type="checkbox" [(ngModel)]="GlobalManager.notShowAgainStaticTip" />
+                        <span
+                            style="margin-left: 2%;font-size: 2.1%;">{{this.i18nManager.getTarget('DoNotShowAgain')}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-identity="SyncTipMessage" id="SharedMask" [style.display]="GlobalManager.Notice_Mes.SyncTipMessage?'flex':'none'">
+            <div class="NoticeUI">
+                <div class="NoticeUI_OK" (mouseenter)="NoticeOKleave=true;"
+                    (mouseleave)="NoticeOKleave=false;SharesFN.logCustom('NoticeOKleave',NoticeOKleave);"
+                    (click)="closeUITip('SyncTipMessage')" [style.background-color]="NoticeOKleave==true?'#17beff':'#2c3647'">
+                    {{i18nManager.getTarget('OK')}}
+                </div>
+                <div class="NoticeUI_Icon"></div>
+                <div class="NoticeUI_Title">{{this.i18nManager.getTarget('Notice')}}</div>
+                <div class="NoticeUI_Content">   
+                    <span [innerHtml]="this.i18nManager.getTarget('SyncTipMessage')" ></span>
+                    <div style="align-items: center;display: flex;margin-top: 1%;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="SyncOnOffArea">
+            <div id="en_同步主板" style="line-height: 117.7%;"
+                [style.display]="i18nManager.onUsingLangindex==0?'block': 'none'">
+                MotherBoard<br>
+                SoftWare Sync
+            </div>
+            <div id="同步主板" [style.display]="i18nManager.onUsingLangindex==1?'block': 'none'">
+                同步主板
+            </div>
+            <div id="UItext_isOnOf">
+                {{GlobalManager.fanisOnOff?i18nManager.getTarget('ONOFF')[0]:i18nManager.getTarget('ONOFF')[1]}}
+            </div>
+            <div id="SybcOnUI" [style.backgroundImage]="GlobalManager.fanisOnOff? ImagePath.onOffUI[0]:ImagePath.onOffUI[1]"
+                (click)="switchFanisOnOff();">
+            </div>
+        </div>
+        <div id="DeviceControllers" style="
+            position: absolute;
+            height: 5%;
+            width: auto;
+            display: flex;
+            left: 24%;
+            top: 7.2%;
+            font-size: 2.1%;
+            pointer-events: auto;
+            /* background: red; */
+        ">
+            <!-- border-bottom: 1px solid #17BEFF; -->
+            <div *ngFor="let item of this.DeviceService.getTarget().onPlugDevice; let i = index" (mouseover)="controller_mouseover=i"
+                [style.border-top]="this.DeviceService.getTarget().controller_index==i||controller_mouseover==i?'1px solid #17BEFF':'1px solid #0000'"
+                [style.pointer-events]="item>0?'auto':'none'"
+                [style.display]="item>0?'auto':'none'"
+                class="ControllersItem" (click)=" this.DeviceService.getTarget().switch_Packaged_Code(i)">
+                {{i18nManager.getTarget('DeviceController')+'0'+(i+1)}}
+            </div>
+
+        </div>
+
+    </section>
+    <div id="SettingMask" [style.display]="settingPage?'flex': 'none'"
+        style="background: rgba(0, 0, 0, 0.63);position: absolute;pointer-events: auto;height: 100%;width: 100%;display: flex;justify-content: center;align-items: center;z-index: 9999"
+        class="">
+
+
+        <div style="position: absolute;height: 75%;width: 72%;display: flex;color: #FFFFFF;">
+            <div data-identity="Title" style="    justify-content: center;
+            height: 14.6%;
+            align-items: center;
+            pointer-events: auto;
+            display: flex;
+            position: absolute;
+            width: 20%;
+            font-size: 2.4%;
+                                            ">
+
+                <img id="SettingBtn_img" src="./image/SW_Icon.png" style="width: 18%;
+                height: 32%;margin-right: 8%;">
+                L-Connect 2.0
+            </div>
+            <div id="SettingVersionTitle" style="position: absolute;
+                                                top: 8%;
+                                                left: 26%;
+                                                font-size: 1.5%;
+                                            ">{{i18nManager.getTarget('SETTINGS')}}</div>
+            <div id="SettingVersion" style="position: absolute;
+                                    bottom: 5.5%;left: 3%;
+                                    color:#B3B3B4;
+                                    font-size: 1.8%;">{{i18nManager.getTarget('Version')+" "+GlobalManager.SettingData.version}}
+            </div>
+
+            <div style="height: 100%;width: 20%;display: flex;background: #292E41;">
+                <div id="Setting_Class_Area" style="height: 80%;width: 100%;display: flex;margin-top: 56%;">
+                    <div style="width: 100%;height: 13%;display: flex;">
+                        <div id="LeftArea_Item"
+                            style="width: 100%;height: 100%;display: flex;align-items: center;background: #17BEFF;/* color: #FFFFFF; */">
+                            <div style="
+                                margin-left: 25%;
+                                font-size: 2%;
+                            ">{{i18nManager.getTarget('GENERAL')}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="Setting_RightArea" style="height: 100%;width: 80%;display: flex;background: #171F33;">
+                <div id="AutoRunSetting"
+                    style="height: 73%;width: 86%;display: flex;margin-top: 14%;margin-left: 8%;font-size: 2.1%;">
+                    <div
+                        style="width: 100%;height: 13%;justify-content: center;align-items: center;display: flex;border-bottom: 3px solid #323949;box-sizing: content-box;">
+                        <div [style.color]="GlobalManager.SettingData.AutoRunOnBoot?'white':'#b3b3b4'"
+                            style="width: 8%;height: 100%;display: flex;align-items: center;">
+                            {{
+                            this.GlobalManager.SettingData.AutoRunOnBoot?i18nManager.getTarget('ONOFF')[0]:i18nManager.getTarget('ONOFF')[1]
+                            }}
+                        </div>
+                        <div [style.backgroundImage]="GlobalManager.SettingData.AutoRunOnBoot? ImagePath.onOffUI[0]:ImagePath.onOffUI[1]"
+                            style="width: 10%;
+                                                height: 55%;
+                                                background-repeat: no-repeat;
+                                                background-image: url(./image/Share/OnOffUI_1.png);
+                                                background-size: 100% 100%;
+                                                margin-left: 1%;" (click)="GlobalManager.switchAutoRunOnBoot();">
+                        </div>
+
+                        <div id="RightArea_Item"
+                            style="width: 100%;height: 100%;display: flex;margin-left: 6%;align-items: center;">
+                            {{i18nManager.getTarget('AutoRunOnBoot')}}
+                        </div>
+
+                    </div>
+                </div>
+                <div class="BtnDefault" id="Apply_Close" style="position: absolute;
+                bottom: 6%;
+                left: 39.8%;
+                width: auto;
+                height: 6%;
+                padding-left: 1%;
+                padding-right: 1%;" (click)="switchSettingPage(false);">
+                    {{i18nManager.getTarget('Apply_Close')}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <body id="主背景區域" style="position: absolute; z-index: 0; top: 0px; left: 0px; width: 100%; height: 100%; background-size: 100% 100%;
+        background-image: url('./image/Share/MainBG.png'); pointer-events: auto; ">
+
+        <div id="LOGO" style="position: absolute;
+    z-index: 0;
+    top: 4%;
+    left: 3.9%;
+    width: 11.55%;
+    height: 4.65%;
+    background-size: 100% 100%;
+    background-image: url(./image/Share/LIAN_LOGO.png); ">
+        </div>
+        <!-- style.background-color]="switchPageBtn[i].check ||PBTNEnter?'#17beff':'transparent'" -->
+        <!-- [style.backgroundImage]="item.imagePath" -->
+        <section id="LeftMenu">
+            <div id="Pagebuttons">
+                <a class="cursor" style="text-transform: uppercase;" 
+                *ngFor="let item of switchPageBtn; let i = index"
+                    [style.background]="item.check?'#17BEFF':''" (mousedown)="onClickPageBtn(i)"
+                    (mouseenter)="PBTNEnter=true" (mouseleave)="PBTNEnter=false">
+                    <div 
+                    style="    position: absolute;
+                    pointer-events: none;
+                    margin-left: 16.9%;
+                    width: 7.3%;
+                    height: 3.4%;
+                    background-size: 100% 100%;
+                    font-style: normal;"  
+                    [style.backgroundImage]="item.imagePath" >    
+                    
+
+                    </div>
+
+                    <div style="    pointer-events: none;
+                    margin-left: 34%;
+                    line-height: 8.88%;
+                    font-size: 1.5%;
+                    font-weight: bold;">{{item.name}}
+                    </div>
+
+                </a>
+            </div>
+        </section>
+        <!-- *ngIf="switchPageBtn[0].check" -->
+
+        <SL_DevicePage [style.display]="switchPageBtn[0].check?'block':'none'" style="display: flex;
+    position: absolute;
+    width: 77%;
+    height: 88%;
+    margin: 0;
+    margin-left: 23%;
+    margin-top: 12.3%;
+    /* background: red; */
+    ">
+        </SL_DevicePage>
+
+    <AL_DevicePage [style.display]="switchPageBtn[1].check?'block':'none'" style="display: flex;
+    position: absolute;
+    width: 77%;
+    height: 87.4%;
+    left: 23%;
+    top: 12.6%;
+    /* background: red; */
+    ">
+    </AL_DevicePage>
+
+    <!-- 
+    <section *ngIf="switchPageBtn[0].check">      
+
+    </section> -->
+    </body>
+</div>

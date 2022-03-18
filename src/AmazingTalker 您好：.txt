@@ -1,0 +1,12 @@
+AmazingTalker 您好：
+
+我是在職軟體程式設計師，看到貴公司正在招募 資深前端工程師 | Sr. Frontend Engineer，因此前來投遞履歷。
+在過去曾有過PHP+MYSQL+XAMPP與APS.NET/WebForm/MVC+MSSQL+IIS以及Angular+Electron+Typescript+Node.js前/後端網頁與伺服器架設相關經驗。
+對於貴公司的職缺有很大的興趣，深知本人只有Angular 未有（Vue.js / React.js）等實際工作經驗，未達到資深前端工程師標準，還是希望能機會加入AmazingTalker進步學習更多的framework建立有系統的Code架構設計，讓Repeatability的Code可以透過製作module與component解決可擴充性以及維護時需多處修改的問題。
+綜合以上，希望我可以為AmazingTalker創造未來的商業價值，附檔為我的履歷與小作品連結youtube程式視頻，感謝您撥冗閱讀，希望有機會收到AmazingTalker的回覆！
+再次感謝，辛苦了！
+Sincerely,
+Louis Chin 敬上
+mobile：0975955099
+email：z23320785@gmail.com
+ 
