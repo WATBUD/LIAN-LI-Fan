@@ -4,25 +4,25 @@
     [style.background]="this.FanSetting.gradient.getMode().isSync&&this.FanSetting.gradient.getMode().chooseGroup==i?'#363C52':''" 
     class="FanGroupStyle" (mousedown)="fanGroupOnClick(i)">
     <div class="FanImageDefault">
-        <div class="fanGroupTrapezoid{{i}} PolygonFanUp" style="left: 3vw;"></div>
-        <div class="fanGroupTrapezoid{{i}} PolygonFanUp" style="left: 11.1vw;"></div>
-        <div class="fanGroupTrapezoid{{i}} PolygonFanUp" style="left: 19vw;"></div>
-        <div class="fanGroupTrapezoid{{i}} PolygonFanUp" style="left: 26.9vw;"></div>
-        <div class="fanGroupTrapezoid{{i}} PolygonFanDown" style="left:3vw;"></div>
-        <div class="fanGroupTrapezoid{{i}} PolygonFanDown" style="left: 11.1vw;"></div>
-        <div class="fanGroupTrapezoid{{i}} PolygonFanDown" style="left: 19vw;"></div>
-        <div class="fanGroupTrapezoid{{i}} PolygonFanDown" style="left: 26.9vw;"></div>
+        <div class="fanGroupTrapezoid{{i}} PolygonFanUp" style="left: calc(var(--CustomWidth)*3);"></div>
+        <div class="fanGroupTrapezoid{{i}} PolygonFanUp" style="left: calc(var(--CustomWidth)*11.1);"></div>
+        <div class="fanGroupTrapezoid{{i}} PolygonFanUp" style="left: calc(var(--CustomWidth)*19);"></div>
+        <div class="fanGroupTrapezoid{{i}} PolygonFanUp" style="left: calc(var(--CustomWidth)*26.9);"></div>
+        <div class="fanGroupTrapezoid{{i}} PolygonFanDown" style="left:calc(var(--CustomWidth)*3);"></div>
+        <div class="fanGroupTrapezoid{{i}} PolygonFanDown" style="left: calc(var(--CustomWidth)*11.1);"></div>
+        <div class="fanGroupTrapezoid{{i}} PolygonFanDown" style="left: calc(var(--CustomWidth)*19);"></div>
+        <div class="fanGroupTrapezoid{{i}} PolygonFanDown" style="left: calc(var(--CustomWidth)*26.9);"></div>
     </div>
     <div id="文字區塊" class="GroupTextAreaStyle">
-        <div style="margin-left: 1.6%;font-size: 2vh;">#{{i+1}}</div>
+        <div style="margin-left: calc(var(--CustomHeight)*1.6);font-size: calc(var(--CustomHeight)*2);">#{{i+1}}</div>
         <div class="GroupFanTextStyle">
         </div>
-        <div style="margin-left: 0.6vw;">
+        <div style="margin-left: calc(var(--CustomWidth)*0.6);">
             {{i18nManager.getTarget('FAN_MODE_LIST')[FanSettingArrayData[i].fanMode]}}
         </div>
         <div class="GroupLedTextStyle">
         </div>
-        <div style="margin-left: 0.6vw;">{{show_i18n_ModeName(this.FanSettingArrayData[i].gradient.gradientMode)}}</div>
+        <div style="margin-left: calc(var(--CustomWidth)*0.6);">{{show_i18n_ModeName(this.FanSettingArrayData[i].gradient.gradientMode)}}</div>
         <div class="GroupRPMTextIcon">
         </div>
         <div class="GroupRPMTextStyle">
@@ -39,20 +39,20 @@
 </div>
 <div id="bodySideAreaDown">
     <section id="FAN setting">
-        <div data-Title="Fan_Title_text" style="width: 1.2vw;
-        height: 1.2vw;
+        <div data-Title="Fan_Title_text" style="width: calc(var(--CustomWidth)*1.2);
+        height: calc(var(--CustomWidth)*1.2);
         background-size: 100% 100%;
         background-repeat: no-repeat;
         background-image: url(./image/FanMode/FanMode_Icon_Blue.png);
         pointer-events: none;
         position: absolute;
-        top: 1.9vh;
-        left: 4vw;">
+        top: calc(var(--CustomHeight)*1.9);
+        left: calc(var(--CustomWidth)*4);">
             <div class="UITextColor" style="position: absolute;
-                margin-left: 2.1vw;
-                width: 8vw;
+                margin-left: calc(var(--CustomWidth)*2.1);
+                width: calc(var(--CustomWidth)*8);
                 background-color: transparent;
-                font-size: 2.5vh;height: 1.2vw; line-height: 1.2vw;">
+                font-size: calc(var(--CustomHeight)*2.5);height: calc(var(--CustomWidth)*1.2); line-height: calc(var(--CustomWidth)*1.2);">
                 {{i18nManager.getTarget('FAN_MODE')}}
             </div>
         </div>
@@ -65,32 +65,32 @@
                 [(ngModel)]="FanSetting.fanRPMValue" [style.pointer-events]="FanSetting.fanMode!=4?'none':'auto'"
                 (ngModelChange)="updateFanSliderWidth(); FanSetting.fanMode==4?fanApplyEnable=true:fanApplyEnable=false">
             <!-- 文字 -->
-            <img src="./image/FanMode/Down_RPM_Icon.png" style="    width: 1.6vw;
-                                height: 2.1vh;
+            <img src="./image/FanMode/Down_RPM_Icon.png" style="    width: calc(var(--CustomWidth)*1.6);
+                                height: calc(var(--CustomHeight)*2.1);
                                 position: absolute;
-                                top: 23.1vh;
-                                left: 2.5vw;">
+                                top: calc(var(--CustomHeight)*23.1);
+                                left: calc(var(--CustomWidth)*2.5);">
             <div style="position: absolute;
                                     text-transform: uppercase;
                                     color: #17beff;
-                                    font-size: 5vh;
-                                    left: 5.9vw;
-                                    width: 7.7vw;
-                                    margin-top: 22.6vh;">{{FanSetting.fanRPMValue}}</div>
-            <div class="UITextColor" style="font-size: 2.4vh;
+                                    font-size: calc(var(--CustomHeight)*5);
+                                    left: calc(var(--CustomWidth)*5.9);
+                                    width: calc(var(--CustomWidth)*7.7);
+                                    margin-top: calc(var(--CustomHeight)*22.6);">{{FanSetting.fanRPMValue}}</div>
+            <div class="UITextColor" style="font-size: calc(var(--CustomHeight)*2.4);
                                     text-transform: uppercase;
                                     height: 20px;
                                     position: absolute;
-                                    left: 13.1vw;
-                                    width: 7.7vw;
-                                    margin-top: 23.2vh;
+                                    left: calc(var(--CustomWidth)*13.1);
+                                    width: calc(var(--CustomWidth)*7.7);
+                                    margin-top: calc(var(--CustomHeight)*23.2);
                                     ">{{i18nManager.getTarget('RPM')}}
             </div>
         
         </div>
 
         <!-- *ngIf="fanModeDropDown"  -->
-        <div style="height: 18.5vh;" [style.display]="fanModeDropDown?'block': 'none'" data-Title="Frameline" class="Frameline">
+        <div style="height: calc(var(--CustomHeight)*18.5);" [style.display]="fanModeDropDown?'block': 'none'" data-Title="Frameline" class="Frameline">
             <div class="dropsdownBox">
                 <a class='cursor hoveritem' *ngFor="let item of i18nManager.getTarget('FAN_MODE_LIST'); let i = index"
                     (click)='chooseFanMode(i)'   
@@ -116,7 +116,7 @@
     <section id="LED_Setting_Mode" style="position: absolute;top: 0px;left: 25%;width: 24.5%;height: 100%;">
         <section [style.display]="!this.FanSetting.gradient.getMode().isSync?'flex': 'none'" id="SL_LPB">
             <div class="cursor LedPartbuttons">
-                <p class="ConcatenationBtnIndex">#{{this.fanGroupIndex+1}}</p>
+                <div class="ConcatenationBtnIndex">#{{this.fanGroupIndex+1}}</div>
                 <div *ngFor="let item of FanSetting.gradient.getMode().LEDConcatenation; let i = index" 
                 class="LPB_Content" 
                     [style.background-color]="item?'#17BEFF':'transparent'"
@@ -132,7 +132,7 @@
         <!-- [style.backgroundImage] -->
         <section [style.display]="this.FanSetting.gradient.getMode().isSync?'flex': 'none'" id="SL_SyncLPB">
             <div *ngFor="let item of FanSetting.gradient.getMode().syncConcatenation; let i = index" class="cursor LedPartbuttons">
-                <p class="ConcatenationBtnIndex" >#{{i+1}}</p>                            
+                <div class="ConcatenationBtnIndex" >#{{i+1}}</div>                            
                 <div class="LPB_Content"
                     [style.border]="item>-1?'0px solid #17beff':'1px solid #3c495b'"                                 
                     [style.background-color]="item>-1?'#17BEFF':'transparent'"
@@ -172,29 +172,29 @@
             </div>
         </section>
 
-        <div data-Title="LED_Title_text" style="    width: 11.3vw;
-                            height: 3.5vh;
+        <div data-Title="LED_Title_text" style="    width: calc(var(--CustomWidth)*11.3);
+                            height: calc(var(--CustomHeight)*3.5);
                             pointer-events: none;
                             position: absolute;
-                            top: 1.9vh;
+                            top: calc(var(--CustomHeight)*1.9);
                             display: flex;
                             align-items: center;
                             justify-content: center;
-                            left: 3vw;">
+                            left: calc(var(--CustomWidth)*3);">
             <div data-title="LED_Title_icon" style="
-                            width: 1.3vw;
-                            height: 1.8vh;
+                            width: calc(var(--CustomWidth)*1.3);
+                            height: calc(var(--CustomHeight)*1.8);
                             background-size: 100% 100%;
                             background-image: url(./image/FanMode/LedMode_Icon_Blue.png);
-                            margin-right: 0.6vw;
-                            margin-bottom: 0.5vh;
+                            margin-right: calc(var(--CustomWidth)*0.6);
+                            margin-bottom: calc(var(--CustomHeight)*0.5);
                             ">
             </div>
-            <div class="UITextColor" style="    width: 8vw;
+            <div class="UITextColor" style="    width: calc(var(--CustomWidth)*8);
                                 background-color: transparent;
-                                font-size: 2.5vh;
-                                height: 1.2vw;
-                                line-height: 1.5vh;">
+                                font-size: calc(var(--CustomHeight)*2.5);
+                                height: calc(var(--CustomWidth)*1.2);
+                                line-height: calc(var(--CustomHeight)*1.5);">
                 {{i18nManager.getTarget('LED_MODE')}}
             </div>
         </div>
@@ -227,10 +227,10 @@
                 [(ngModel)]="_Global.getColorTarget().Value" (ngModelChange)='colorControl()'>
         
                 <div id="DefulatColorArea" style="    position: absolute;
-                top: 10.8vh;
+                top: calc(var(--CustomHeight)*10.8);
                 left: 9.7%;
-                width: 16vw;
-                height: 9vh;
+                width: calc(var(--CustomWidth)*16);
+                height: calc(var(--CustomHeight)*9);
                 display: flex;
                 /* background: red; */
                 flex-wrap: wrap;  
@@ -242,7 +242,7 @@
                             [style.background-color]="item.getColorFormat_RGB()">
                         </div>
                     </div>
-                    <div class="_GlobalColorArrays" style="margin-left: 2vw;">
+                    <div class="_GlobalColorArrays" style="margin-left: calc(var(--CustomWidth)*2);">
                         <div id="ReSetDefault" style="    background-size: 100% 100%;
                                     background-image: url(./image/Share/Off/ReSetDefault.png);
                                     display: flex;
@@ -279,7 +279,7 @@
                 </div>
                 <div id="colorSelectAll" style="
                 background-image: url(./image/Share/Off/ColorSelectAll.png);   
-                width: 2.92vw;height: 2.92vw;
+                width: calc(var(--CustomWidth)*2.92);height: calc(var(--CustomWidth)*2.92);
                 background-size: 100% 100%; "
                 (click)="onclickColorDefault('All')"  
                 (mouseenter)="ColorSelectAll_Enter=true;" (mouseleave)="ColorSelectAll_Enter=false;"
@@ -296,29 +296,36 @@
 
     </section>
     <section id="setting speed bright And direction" class="SpeedBrightDircetion">
-        <div style=" margin-left: 1.5vw;height: 1.7vh;"></div>
+        <div style=" margin-left: calc(var(--CustomWidth)*1.5);height: calc(var(--CustomHeight)*1.7);"></div>
         <div *ngIf="this.FanSetting.gradient.getSBDShowList()[0]" (mouseenter)="hover1=true" (mouseleave)="hover1=false" class="FrameDefault"
-            style="display:inline-block;margin-left: 1.5vw; margin-top: 1vh">
+            style="display:inline-block;margin-left: calc(var(--CustomWidth)*1.5); margin-top: 1vh">
             <span class="SPDTitleText UITextColor">{{i18nManager.getTarget('PREVIEW_SPEED')}}
             </span>
-            <span  style="margin-left: 12.6vw; position: absolute;color: #17beff;font-size: 3vh;
-                         line-height: 3.9vh;margin-top: 2.6vh;/* background: blue; */">{{(FanSetting.gradient.getMode().speed/4)*100}}%
+            <span  style="margin-left: calc(var(--CustomWidth)*12.6); 
+            position: absolute;color: #17beff;
+            font-size: calc(var(--CustomHeight)*3);
+                         line-height: calc(var(--CustomHeight)*3.9); 
+                         margin-top:calc(var(--CustomHeight)*2.6);
+                         /* background: blue; */">{{(FanSetting.gradient.getMode().speed/4)*100}}%
             </span>
             <input id="InputSpeed" type="range" min="0" max="4" step="1" [(ngModel)]="FanSetting.gradient.getMode().speed"
                 [style.backgroundSize]="FanSetting.gradient.getMode().speed*25+'% 100%'">
         </div>
         <div  *ngIf="this.FanSetting.gradient.getSBDShowList()[0]" 
         style="display: inline-block;
-        margin-left: 1.5vw;
-        width: 15.5vw;
-        height: 1.5vh;">               
+        margin-left: calc(var(--CustomWidth)*1.5);
+        width: calc(var(--CustomWidth)*15.5);
+        height: calc(var(--CustomHeight)*1.5);">               
         </div>
         <div *ngIf="this.FanSetting.gradient.getSBDShowList()[1]" (mouseenter)="hover2=true" (mouseleave)="hover2=false" class="FrameDefault"
-            style="display:inline-block;margin-left: 1.5vw;">
+            style="display:inline-block;margin-left: calc(var(--CustomWidth)*1.5);">
 
             <span class="SPDTitleText UITextColor">{{i18nManager.getTarget('PREVIEW_BRIGHTNESS')}}</span>
-            <span style="margin-left: 12.6vw; position: absolute;color: #17beff;font-size: 3vh;line-height: 3.9vh;
-            margin-top: 2.6vh;/* background: blue; */">{{(FanSetting.gradient.getMode().bright/4)*100}}%
+            <span style="margin-left: calc(var(--CustomWidth)*12.6);  
+            position: absolute;color: #17beff;
+            font-size: calc(var(--CustomHeight)*3);
+            line-height: calc(var(--CustomHeight)*3.9);
+            margin-top: calc(var(--CustomHeight)*2.6);/* background: blue; */">{{(FanSetting.gradient.getMode().bright/4)*100}}%
             </span>
             <input id="InputBright" type="range" min="0" max="4" step="1" [(ngModel)]="FanSetting.gradient.getMode().bright"
                 [style.backgroundSize]="FanSetting.gradient.getMode().bright*25+'% 100%'">
@@ -328,19 +335,20 @@
         </div>
         <div *ngIf="this.FanSetting.gradient.getSBDShowList()[1]" 
         style="display: inline-block;
-        margin-left: 1.5vw;
-        width: 15.5vw;
-        height: 1.5vh;">               
+        margin-left: calc(var(--CustomWidth)*1.5);
+        width: calc(var(--CustomWidth)*15.5);
+        height: calc(var(--CustomHeight)*1.5);">               
         </div>
         <div *ngIf="this.FanSetting.gradient.getSBDShowList()[2]" 
             (mouseenter)="hover3=true" (mouseleave)="hover3=false" class="FrameDefault"
             style="display:block;margin-left: 8%;" >
             <span class="SPDTitleText UITextColor">{{i18nManager.getTarget('PREVIEW_DIRECTION')}}</span>
             <div id="dirBgNormalL" style="display: inline-block;
-            margin-left: 1vw;margin-top: 4vh;
+            margin-left: calc(var(--CustomWidth)*1);
+            margin-top: calc(var(--CustomHeight)*4);
             background-size: 100% 100%;
-            width: 5.5vw;
-            height: 2.8vh;"
+            width: calc(var(--CustomWidth)*5.5);
+            height: calc(var(--CustomHeight)*2.8);"
                 [style.backgroundImage]="FanSetting.gradient.getMode().direction==1? ImagePath.dirBgNormalL[0]:ImagePath.dirBgNormalL[1]"
                 (mousedown)="FanSetting.gradient.getMode().direction=1">
             </div>
@@ -348,8 +356,8 @@
             margin-left: 8%;
             margin-top: 11.5%;
             background-size: 100% 100%;
-            width: 5.5vw;
-            height: 2.8vh;"
+            width: calc(var(--CustomWidth)*5.5);
+            height: calc(var(--CustomHeight)*2.8);"
             
                 [style.backgroundImage]="FanSetting.gradient.getMode().direction==2? ImagePath.dirBgNormalR[0]:ImagePath.dirBgNormalR[1]"
                 (mousedown)="FanSetting.gradient.getMode().direction=2">

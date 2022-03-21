@@ -84,6 +84,7 @@ export class AppComponent implements OnInit {
         let langObj = []; langObj.push('OPEN L-Connect'); langObj.push('EXIT L-Connect');
         
         AppComponent.instance=this;
+
     }
 
 
@@ -296,7 +297,7 @@ export class AppComponent implements OnInit {
         //     }
 
         //         this.onAppImportExport=false;
-        //         this.cdr.detectChanges();;
+        //         this.cdr.detectChanges();
 
             
         
@@ -333,7 +334,7 @@ export class AppComponent implements OnInit {
         //         });
         //     }
         //         this.onAppImportExport=false;
-        //         this.cdr.detectChanges();;
+        //         this.cdr.detectChanges();
 
             
         // })
@@ -358,8 +359,22 @@ export class AppComponent implements OnInit {
     
     
 
-    changeWinSystemTaskBar(ordertype) {
+    changeWinSystemTaskBar(ordertype="") {
+        var host:any  =<HTMLElement>document.querySelector(':host');
+        var appSelector :any =<HTMLElement>document.querySelector('app-selector');
+        var root:any =document.querySelector('root');
+        this.isMaximizeScreen=!this.isMaximizeScreen;
+        if(!this.isMaximizeScreen){
+            appSelector.style.setProperty('--CustomWidth', '9.6Px');
+            appSelector.style.setProperty('--CustomHeight', '5.4Px');
+        }
+        else if(this.isMaximizeScreen){
+            appSelector.style.setProperty('--CustomWidth', '19.2Px');
+            appSelector.style.setProperty('--CustomHeight', '10.8Px');
+        }
 
+
+        console.log('%c rrr', 'background: blue; color: red',host,appSelector,root);
 
     }
 

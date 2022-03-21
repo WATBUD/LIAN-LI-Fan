@@ -2,54 +2,54 @@
 /*#region Area*/
 
 .LedListTitleStyle{
-    left: 4vw;
-    height: 4.9vh;
+    left: calc(var(--CustomWidth)*4);
+    height: calc(var(--CustomHeight)*4.9);
     border: 0.08vw solid rgb(23, 190, 255);
-    width: 15.4vw;
-    border-radius: 0px 1.3vw 1.3vw 0px;
+    width: calc(var(--CustomWidth)*11.5);
+    border-radius: 0px calc(var(--CustomWidth)*1.3) calc(var(--CustomWidth)*1.3) 0px;
     position: absolute;
-    top: 5.7vh;
+    top: calc(var(--CustomHeight)*5.7);
     color: white;
-    line-height: 5.3vh;
+    line-height: calc(var(--CustomHeight)*5.3);
     background-size: 100% 100%;
     text-align: left;
-    font-size: 2.3vh;
+    font-size: calc(var(--CustomHeight)*2.3);
     overflow: hidden;
 }
 
 .ModeDropStyle{
 
     position: absolute;
-    top: 5.7vh;
-    left: 1.8vw;
-    width: 15.4vw;
-    height: 4.9vh;
+    top: calc(var(--CustomHeight)*5.7);
+    left: calc(var(--CustomWidth)*1.8);
+    width: calc(var(--CustomWidth)*15);
+    height: calc(var(--CustomHeight)*4.9);
     color: rgb(255, 255, 255);
-    line-height: 5.3vh;
+    line-height: calc(var(--CustomHeight)*5.3);
     background-size: 100% 100%;
     text-align: left;
-    font-size: 2.3vh;
+    font-size: calc(var(--CustomHeight)*2.3);
     overflow: hidden;
 }
 
 .LEDModeListItem{
-    padding-left: 0.73vw;
+    padding-left: calc(var(--CustomWidth)*0.73);
     background-color: #363c52;
-    margin-left: 0vw;
+    margin-left: calc(var(--CustomWidth)*0);
     display: flex;
     align-items: center;
-    font-size: 2.3vh;
+    font-size: calc(var(--CustomHeight)*2.3);
     color: #fff;
-    margin-top: 0vh;
+    margin-top: calc(var(--CustomHeight)*0);
     width: 95%;
-    height: 3.4vh;
+    height: calc(var(--CustomHeight)*3.4);
     white-space: nowrap;
 }
 
 
 .ControllersItem{
     color: white;
-    width: 7vw;
+    width: calc(var(--CustomWidth)*7);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -65,7 +65,7 @@
     right: 0;
     z-index: 9999;
     top: 50%;
-    width: 15.2vw;
+    width: calc(var(--CustomWidth)*15);
     border-right-color: rgb(0, 255, 0);
     border-right-style: solid;
     border-right-width: 2px;
@@ -84,8 +84,8 @@
 
 
 .FanGroupStyle{  
-    width: 37.8vw;
-    height: 23.9vh;
+    width: calc(var(--CustomWidth)*38.3);
+    height: calc(var(--CustomHeight)*23.9);
     background-size: 100% 100%;
     display: flex;
     justify-content: center;
@@ -95,53 +95,53 @@
 }
 .GroupTextAreaStyle{
     color: #C9CACA;
-    line-height: 1.8vh;
-    margin-top: 14.3vh;
+    line-height: calc(var(--CustomHeight)*1.8);
+    margin-top: calc(var(--CustomHeight)*18.3);
     display: flex;
-    width: 32vw;
+    width: calc(var(--CustomWidth)*32);
     align-items: center;
-    height: 3.9vh;
-    font-size: 1.7vh;
+    height: calc(var(--CustomHeight)*3.9);
+    font-size: calc(var(--CustomHeight)*1.7);
     background-size: 100% 100%;
     background-image: url(/image/FanMode/fansInfoText.png);
     position: absolute;
 }
 .GroupFanTextStyle{
 
-    width: 0.7vw;
-    height: 0.7vw;
+    width: calc(var(--CustomWidth)*0.7);
+    height: calc(var(--CustomWidth)*0.7);
     background-size: 100% 100%;
     background-image: url('/image/FanMode/FanMode_Icon.png');
     pointer-events: none;
-    margin-left: 2vw;
+    margin-left: calc(var(--CustomWidth)*2);
 }
 
 
 .GroupRPMTextStyle{
-    width: 5vw;
-    height: 2vh;
+    width: calc(var(--CustomWidth)*5);
+    height: calc(var(--CustomHeight)*2);
     pointer-events: none;
     white-space: nowrap;
-    margin-left: 0.6vw;
+    margin-left: calc(var(--CustomWidth)*0.6);
 }
 
 .GroupRPMTextIcon{
-    width: 1.1vw;
-    height: 1.5vh;
+    width: calc(var(--CustomWidth)*1.1);
+    height: calc(var(--CustomHeight)*1.5);
     background-size: 100% 100%;
     background-image: url('/image/FanMode/RPM_Icon.png');
     pointer-events: none;
-    margin-left: 0.6vw;
+    margin-left: calc(var(--CustomWidth)*0.6);
 
 }
 
 .GroupLedTextStyle{
     background-size: 100% 100%;
     background-image: url('/image/FanMode/LedMode_Icon.png');
-    width: 1.3vw;
-    height: 1.5vh;
+    width: calc(var(--CustomWidth)*1.3);
+    height: calc(var(--CustomHeight)*1.5);
     pointer-events: none;
-    margin-left: 0.5vw;
+    margin-left: calc(var(--CustomWidth)*0.5);
 }
 
 
@@ -151,47 +151,47 @@
     left: 74.6%;
     width: 25%;
     height: 100%;
-    line-height: 3vh;
+    line-height: calc(var(--CustomHeight)*3);
 }
 #colorRecordArea{
     display: flex;
     align-items: center;
-    width: 16vw;
-    margin-left: 1.8vw;
-    MARGIN-TOP: 21vh;
-    height: 4.7vh;
+    width: calc(var(--CustomWidth)*16);
+    margin-left: calc(var(--CustomWidth)*1.8);
+    MARGIN-TOP: calc(var(--CustomHeight)*21);
+    height: calc(var(--CustomHeight)*4.7);
 }
 .RecordAreaFrame{
     display: flex;
-    width: 2.92vw;
-    height: 2.92vw;
+    width: calc(var(--CustomWidth)*2.92);
+    height: calc(var(--CustomWidth)*2.92);
     margin-right: 1.3%;
     cursor: url(/image/Share/bucket.png) 0 0, auto;
 }
 ._GlobalColorArrays{
     display: flex;
-    width: 1.9vw;
-    height: 1.9vw;
+    width: calc(var(--CustomWidth)*1.9);
+    height: calc(var(--CustomWidth)*1.9);
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
 }
 .RecordAreaBtn{
     outline: none;
-    height: 2.8vw;
-    width: 2.8vw;
+    height: calc(var(--CustomWidth)*2.8);
+    width: calc(var(--CustomWidth)*2.8);
     border: none;
     margin-top: 8%;
 }
 
 .HSBText{
-    font-size: 1.5vh;
+    font-size: calc(var(--CustomHeight)*1.5);
     color: #C9CACA;
-    line-height: 2.7vh;
+    line-height: calc(var(--CustomHeight)*2.7);
     width: 68%;
     display: flex;
-    height: 8vh;
-    padding-top: 0.6vh;
+    height: calc(var(--CustomHeight)*8);
+    padding-top: calc(var(--CustomHeight)*0.6);
     justify-content: center;
     align-items: center;
     text-align: left;
@@ -203,9 +203,9 @@
 .LedPartbuttons{
     display: flex;
     width: 100%;
-    line-height: 7vh;
+    line-height: calc(var(--CustomHeight)*7);
     background-size: 100% 100%;
-    margin-top: 1vh;
+    margin-top: calc(var(--CustomHeight)*1);
     justify-content: center;
     /* background-image: url(/image/FanMode/btn01_normal.png); */
 }
@@ -213,8 +213,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 3.1vw;
-    height: 2.8vw;
+    width: calc(var(--CustomWidth)*3.1);
+    height: calc(var(--CustomWidth)*2.8);
     background-size: 100% 100%;
     border: 1px solid rgb(23, 190, 255);
 }
@@ -222,8 +222,8 @@
     background-size: 100% 100%;
     text-align: center;
     background: #2c3647;
-    font-size: 2.1vh;
-    line-height: 5.5vh;
+    font-size: calc(var(--CustomHeight)*2.1);
+    line-height: calc(var(--CustomHeight)*5.5);
     color: #CCCCCC;
     border: 1px solid #3C495B;
     border-radius: 4px;
@@ -234,62 +234,62 @@
 }
 .ApplyUI{
     position: absolute;
-    top: 28.3vh;
-    left: 1.8vw;
-    width: 6.1vw;
-    height: 5.5vh;
+    top: calc(var(--CustomHeight)*28.3);
+    left: calc(var(--CustomWidth)*1.8);
+    width: calc(var(--CustomWidth)*6.1);
+    height: calc(var(--CustomHeight)*5.5);
 }
 .ApplyAllUI{
     position: absolute;
-    top: 28.3vh;
-    left: 8.4vw;
-    width: 8.5vw;
-    height: 5.5vh;
+    top: calc(var(--CustomHeight)*28.3);
+    left: calc(var(--CustomWidth)*8.4);
+    width: calc(var(--CustomWidth)*8.5);
+    height: calc(var(--CustomHeight)*5.5);
 }
 
 .ApplyLong {
     position: absolute;
-    width: 9.4vw;
-    top: 28.4vh;
-    left: -1.6vw;
-    height: 5.5vh;
+    width: calc(var(--CustomWidth)*9.4);
+    top: calc(var(--CustomHeight)*28.4);
+    left: calc(var(--CustomWidth)*-1.6);
+    height: calc(var(--CustomHeight)*5.5);
 }
 
 
 
 .DefaultApply{
     position: absolute;
-    top: 28.4vh;
-    left: 1.5vw;
-    width: 7.3vw;
-    height: 5.5vh;
+    top: calc(var(--CustomHeight)*28.4);
+    left: calc(var(--CustomWidth)*1.5);
+    width: calc(var(--CustomWidth)*7.3);
+    height: calc(var(--CustomHeight)*5.5);
 }
 .ColorApply{
     position: absolute;
-    top: 28.4vh;
-    left: 9.3vw;
-    width: 5.7vw;
-    height: 5.5vh;
+    top: calc(var(--CustomHeight)*28.4);
+    left: calc(var(--CustomWidth)*9.3);
+    width: calc(var(--CustomWidth)*5.7);
+    height: calc(var(--CustomHeight)*5.5);
 }
 .FrameDefault {
     /* position: absolute; */
-    width: 15.5vw;
-    height: 4.5vh;
+    width: calc(var(--CustomWidth)*15.5);
+    height: calc(var(--CustomHeight)*4.5);
     background-size: 100% 100%;
 }
 
 
 .SPDTitleText {
     position: absolute;
-    margin-left: 1vw;
-    font-size: 2.5vh;
+    margin-left: calc(var(--CustomWidth)*1);
+    font-size: calc(var(--CustomHeight)*2.5);
 }
 
 
 
 .FanImageDefault{
-    width: 32vw;
-    height: 14.5vh;
+    width: calc(var(--CustomWidth)*32);
+    height: calc(var(--CustomHeight)*14.5);
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-image: url(/image/FanMode/AL_Four_FansT2.png);
@@ -297,14 +297,14 @@
     display: flex;
     FLEX-WRAP: wrap;
     position: absolute;
-    margin-top: -3.9vh;
+    margin-top: calc(var(--CustomHeight)*-3.9);
 }
 .FanAnimationBlock{
-    width: 32vw;
-    height: 14.5vh;
+    width: calc(var(--CustomWidth)*32);
+    height: calc(var(--CustomHeight)*14.5);
     pointer-events: none;
     display: flex;
-    margin-top: -3.9vh;
+    margin-top: calc(var(--CustomHeight)*-3.9);
 }
 
 
@@ -332,8 +332,8 @@
     -webkit-app-region: drag;
     position: absolute;
     z-index: 95;
-    width: 83vw;
-    height: 4vh;
+    width: calc(var(--CustomWidth)*83);
+    height: calc(var(--CustomHeight)*4);
     opacity: 1;
     /* background-color: #f00; */
 }
@@ -341,16 +341,16 @@
     position: absolute;
     display: flex;
     flex-wrap: wrap;
-    width: 77vw;    
-    height: 49.7vh;
+    width: calc(var(--CustomWidth)*77);    
+    height: calc(var(--CustomHeight)*49.7);
     background-color: #0000;
     box-sizing: border-box;
 }
 
 #OutSideFrame {
     position: absolute;
-    width: 76.8vw;
-    height: 49.7vh;
+    width: calc(var(--CustomWidth)*76.8);
+    height: calc(var(--CustomHeight)*49.7);
     background-color: #0000;
     box-sizing: border-box;
     pointer-events: none;
@@ -358,17 +358,17 @@
 
   #bodySideAreaDown {
     position: absolute;
-    top: 51vh;
-    width: 77vw;
-    height: 37vh;
+    top: calc(var(--CustomHeight)*51);
+    width: calc(var(--CustomWidth)*77);
+    height: calc(var(--CustomHeight)*37);
   }
 
 #LeftMenu {
     position: absolute;
     float: left;
-    top: 12.1vh;
-    width: 22.9vw;
-    height: 87vh;
+    top: calc(var(--CustomHeight)*12.1);
+    width: calc(var(--CustomWidth)*22.9);
+    height: calc(var(--CustomHeight)*87)
   }
 #switchPageBtn a {
     display: block;
@@ -406,14 +406,14 @@
 
 .Frameline{
     position: absolute;
-    top: 8.5vh;
-    left: 1.8vw;
-    border: 0.1vw solid #17beff;
-    width: 15.4vw;
+    top: calc(var(--CustomHeight)*8.5);
+    left: calc(var(--CustomWidth)*1.8);
+    border: calc(var(--CustomWidth)*0.1) solid #17beff;
+    width: calc(var(--CustomWidth)*14.8);
     border-top-color: rgba(179, 54, 204, 0);
     border-top-style: solid;
     border-top-width: 2px;
-    height: 25.5vh;
+    height: calc(var(--CustomHeight)*25.5);
     overflow-y: hidden;
     -webkit-appearance: none;
     background: #161B26;
@@ -426,19 +426,20 @@
 /*#region dropsdown*/
 .dropsdownBox{
     position: absolute;
-    top: 2.5vh;
+    top: calc(var(--CustomHeight)*2.5);
     width: 97%;
-    height: 21.8vh;
+    height: calc(var(--CustomHeight)*21.8);
     overflow-y: auto;
+    overflow-x: hidden;
     z-index: 9999;
     background-size: 100% 100%;
 }
 
 .dropsdownBox a{
     display: block;
-    padding-left: 1vw;
-    padding-top: 0.2vw;
-    font-size: 2.3vh;
+    padding-left: calc(var(--CustomWidth)*1);
+    padding-top: calc(var(--CustomWidth)*0.2);
+    font-size: calc(var(--CustomHeight)*2.3);
     color: rgb(255,255,255);
 }
 .dropsdownBox a.hoveritem:hover{
@@ -449,10 +450,10 @@
     overflow: hidden;
 }
 .hoveritem{
-    line-height: 2.5vh;
+    line-height: calc(var(--CustomHeight)*2.5);
 }
 .dropsdownBox::-webkit-scrollbar {
-    width: 1.1vh;
+    width: calc(var(--CustomHeight)*1.1);
 }
 .dropsdownBox::-webkit-scrollbar-thumb {
     border-radius: 10px;
@@ -469,44 +470,48 @@
 
 /*#region Polygon*/
 .FanGroup_ItemStyle{
-    width: 2.8vw;
-    height: 2.8vw;
-    margin-top: 4.3vh;
+    width: calc(var(--CustomWidth)*2.8);
+    height: calc(var(--CustomWidth)*2.8);
+    margin-top: calc(var(--CustomHeight)*4.4);
     /* background: #ff000061; */
 }
 
 .FanOuter_Item{
     position: absolute;
     background:transparent;
-    width: 1vw;
-    height: 0.6vh;
+    width: calc(var(--CustomWidth)*1);
+    height: calc(var(--CustomHeight)*0.6);
 }
 
 .FanOuterGroup_ItemStyle{
-    width: 8vw;height: 8vw;
-    border-radius: 4vh;
+    width: calc(var(--CustomWidth)*8);
+    height: calc(var(--CustomHeight)*8);
+    border-radius: calc(var(--CustomHeight)*4);
     /* background: #ff000061; */
 }
 
 .PolygonFanUp{
-    position: absolute;margin-top: -3.8vh;margin-left: -2.4vw;transform-origin: center center;
+    position: absolute;
+    margin-top: calc(var(--CustomHeight)*-3.8);
+    margin-left: calc(var(--CustomWidth)*-2.4);
+    transform-origin: center center;
     background:transparent;
-    width: 7.6vw;
-    height: 7.6vw;
+    width: calc(var(--CustomWidth)*7.6);
+    height: calc(var(--CustomWidth)*7.6);
     border-radius: 100px;
     clip-path: polygon(50% 50%, 0% 50%, 0% 0%);
 
 }
 .PolygonFanDown{
-    top: 13.8vh;
+    top: calc(var(--CustomHeight)*13.8);
     /* position: absolute; */
     background-repeat: no-repeat;
     /* background: rgb(0, 0, 0); */
     z-index: 4;
-    width: 7.8vw;
-    MARGIN-TOP: 6.6VH;
-    height: 4vh;
-    margin-left: 0.2vw;
+    width: calc(var(--CustomWidth)*7.8);
+    MARGIN-TOP: calc(var(--CustomHeight)*6.6);
+    height: calc(var(--CustomHeight)*4);
+    margin-left: calc(var(--CustomWidth)*0.2);
     clip-path: polygon(0% 11%, 21% 83%, 80% 83%, 100% 15%, 83% 100%, 21% 100%);
 }
 /*#endregion Polygon*/
@@ -530,18 +535,18 @@ input[type=range] {
   
 #FanInputs input{
     position: absolute;
-    width: 16vw;
+    width: calc(var(--CustomWidth)*16);
     transform-origin: left; 
-    left: 1vw;
+    left: calc(var(--CustomWidth)*1);
     /* transform: rotate(90deg); */
 }
 
 
 .FanBarBG{
-    top: 12.8vh;
-    left: 2vw;
-    width: 15vw;
-    height: 6.6vh;
+    top: calc(var(--CustomHeight)*12.8);
+    left: calc(var(--CustomWidth)*2);
+    width: calc(var(--CustomWidth)*15);
+    height: calc(var(--CustomHeight)*6.6);
     position: absolute;
     background-image: url('/image/FanMode/SliderFan_normal.png');
     background-repeat: no-repeat;
@@ -549,10 +554,10 @@ input[type=range] {
 }
 
 .FanOverBar{
-    top: 12.8vh;
-    left: 2vw;
-    width: 15vw;
-    height: 6.6vh;
+    top: calc(var(--CustomHeight)*12.8);
+    left: calc(var(--CustomWidth)*2);
+    width: calc(var(--CustomWidth)*15);
+    height: calc(var(--CustomHeight)*6.6);
     position:absolute;
     background-image:url('/image/FanMode/SliderFan_over.png');
     background-repeat: no-repeat;
@@ -569,8 +574,8 @@ input[type=range] {
 }
 
 #InputSpeed::-webkit-slider-thumb {
-    height: 1vw;
-    width: 1vw;
+    height: calc(var(--CustomWidth)*1);
+    width: calc(var(--CustomWidth)*1);
     background-color: #17beff;
     border-radius: 15px;
     background-image: url('/image/Share/InputButton.png');
@@ -579,10 +584,10 @@ input[type=range] {
 #InputSpeed {
     position: absolute;
     background-repeat: no-repeat;
-    height: 0.7vh;
-    width: 10.5vw;
-    margin-top: 4.3vh;
-    margin-left: 1vw;
+    height: calc(var(--CustomHeight)*0.7);
+    width: calc(var(--CustomWidth)*10.5);
+    margin-top: calc(var(--CustomHeight)*4.3);
+    margin-left: calc(var(--CustomWidth)*1);
     border-radius: 15px;
     background: -webkit-linear-gradient(#0000, #17beff) no-repeat, #2F2F2E;
     background-size: 0 100%;
@@ -592,8 +597,8 @@ input[type=range] {
 
 
 #InputBright::-webkit-slider-thumb {
-    height: 1vw;
-    width: 1vw;
+    height: calc(var(--CustomWidth)*1);
+    width: calc(var(--CustomWidth)*1);
     background-color: #17beff;
     border-radius: 15px;
     background-image: url('/image/Share/InputButton.png');
@@ -602,10 +607,10 @@ input[type=range] {
 #InputBright {
     position: absolute;
     background-repeat: no-repeat;
-    height: 0.7vh;
-    width: 10.5vw;
-    margin-top: 4.3vh;
-    margin-left: 1vw;
+    height: calc(var(--CustomHeight)*0.7);
+    width: calc(var(--CustomWidth)*10.5);
+    margin-top: calc(var(--CustomHeight)*4.3);
+    margin-left: calc(var(--CustomWidth)*1);
     border-radius: 15px;
     background: -webkit-linear-gradient(#0000, #17beff) no-repeat, #2F2F2E;
     background-size: 0 100%;
@@ -614,8 +619,8 @@ input[type=range] {
 
 
 #ColorSliderH::-webkit-slider-thumb {
-    height: 1.9vh;
-    width: 0.4vw;
+    height: calc(var(--CustomHeight)*1.9);
+    width: calc(var(--CustomWidth)*0.4);
     background: #181F32;
     border: white 0.01vw solid;
     /* background-size: 100% 100%;
@@ -624,8 +629,8 @@ input[type=range] {
 }
 
 #ColorSliderS::-webkit-slider-thumb {
-    height: 1.9vh;
-    width: 0.4vw;
+    height: calc(var(--CustomHeight)*1.9);
+    width: calc(var(--CustomWidth)*0.4);
     background: #181F32;
     border: white 0.01vw solid;
     /* background-size: 100% 100%;
@@ -633,8 +638,8 @@ input[type=range] {
 
 }
 #ColorSliderV::-webkit-slider-thumb {
-    height: 1.9vh;
-    width: 0.4vw;
+    height: calc(var(--CustomHeight)*1.9);
+    width: calc(var(--CustomWidth)*0.4);
     background: #181F32;
     border: white 0.01vw solid;
     background-repeat: no-repeat;
@@ -647,27 +652,27 @@ input[type=range] {
 #ColorSliderH{
 
     position: absolute;
-    top: 1.6vh;
+    top: calc(var(--CustomHeight)*1.6);
     left: 9%;
-    width: 15.2vw;
-    height: 1.5vh;
+    width: calc(var(--CustomWidth)*15);
+    height: calc(var(--CustomHeight)*1.5);
     background-size: 100% 100%;
     background-image: url('/image/FanMode/colorBarH.png');
 }
 #ColorSliderS{
     position: absolute;
-    top: 4.5vh;
+    top: calc(var(--CustomHeight)*4.5);
     left: 9%;
-    width: 15.2vw;
-    height: 1.5vh;
+    width: calc(var(--CustomWidth)*15);
+    height: calc(var(--CustomHeight)*1.5);
     /* background: -webkit-linear-gradient(left,#FFFFFF,black); */
 }
 #ColorSliderV{
     position: absolute;
-    top: 7.3vh;
+    top: calc(var(--CustomHeight)*7.3);
     left: 9%;
-    width: 15.2vw;
-    height: 1.5vh;
+    width: calc(var(--CustomWidth)*15);
+    height: calc(var(--CustomHeight)*1.5);
     /* background: -webkit-linear-gradient(left,#FFFFFF,black); */
 }
 
@@ -696,42 +701,42 @@ input[type=range] {
     font-size: 12px;text-transform: uppercase;color:rgb(80,175,228);
 }
 .ConcatenationBtnText{
-    line-height: 2.8vw;
-    font-size: 2.3vh;
+    line-height: calc(var(--CustomWidth)*2.8);
+    font-size: calc(var(--CustomHeight)*2.3);
     text-transform: uppercase;
     color:rgb(255,255,255);
 }
 .ConcatenationBtnIndex{
     border-radius: 6px 1px 1px 6px;
     background: #2C3647;
-    width: 3vw;
-    height: 2.8vw;
+    width: calc(var(--CustomWidth)*3);
+    height: calc(var(--CustomWidth)*2.8);
     display: flex;
     justify-content: center;
     align-items: center;
-    line-height: 6.7vh;
+    line-height: calc(var(--CustomHeight)*6.7);
     text-transform: uppercase;
-    font-size: 2.4vh;
+    font-size: calc(var(--CustomHeight)*2.4);
     color: #B0C3EA;
     border: 1px solid #3c495b;
 }
 
 #SL_SyncLPB{
     display: flex;
-    width: 15.4vw;
-    height: 25vh;
-    margin-left: 4.4vw;
-    margin-top: 11vh;
+    width: calc(var(--CustomWidth)*15);
+    height: calc(var(--CustomHeight)*25);
+    margin-left: calc(var(--CustomWidth)*4.4);
+    margin-top: calc(var(--CustomHeight)*11);
     flex-direction: column;
     align-items: center;
 }
 
 #SL_LPB{
     display: flex;
-    width: 15.4vw;
-    height: 25vh;
-    margin-left: 4.4vw;
-    margin-top: 11vh;
+    width: calc(var(--CustomWidth)*15);
+    height: calc(var(--CustomHeight)*25);
+    margin-left: calc(var(--CustomWidth)*4.4);
+    margin-top: calc(var(--CustomHeight)*11);
     flex-direction: column;
     align-items: center;
 }

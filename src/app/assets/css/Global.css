@@ -1,10 +1,9 @@
 :host{
-    --CustomWidth: 960px;
-    --CustomHeight: 540px;
-    --TSTTTTT: 540;
+    --CustomWidth: 9.6px;
+    --CustomHeight: 5.4px;
     position: absolute;
-    width: var(--CustomWidth);
-    height: var(--CustomHeight);
+    width: calc(var(--CustomWidth)*100);
+    height: calc(var(--CustomHeight)*100);
     background: rgb(255 0 0);
 }
 
@@ -20,28 +19,28 @@
 }
 
 #SybcOnUI{
-    height: calc(var(--CustomHeight)*0.032);
-    width:  calc(var(--CustomWidth)*0.032);
+    height: calc(var(--CustomHeight)*3.2);
+    width:  calc(var(--CustomWidth)*3.2);
     background-size: 100% 100%;
     background-image: url('/image/Share/OnOffUI_1.png');
     pointer-events: auto;
-    margin-left: calc(var(--CustomWidth)*0.01);
+    margin-left: calc(var(--CustomWidth)*1);
 }
 #UItext_isOnOf{
-    line-height: 2.5vh;
-    margin-left: 1vw;
+    line-height: calc(var(--CustomHeight)*2.5);
+    margin-left: calc(var(--CustomWidth)*1);
 }
 #SyncOnOffArea{
     justify-content: center;
-    height: 5.6vh;
-    width: 19vw;
+    height: calc(var(--CustomHeight)*5.6);
+    width: calc(var(--CustomWidth)*19);
     align-items: center;
     pointer-events: auto;
     display: flex;
     position: absolute;
-    bottom: 2vh;
-    left: 2vw;
-    font-size: 2.2vh;
+    bottom: calc(var(--CustomHeight)*2);
+    left: calc(var(--CustomWidth)*2);
+    font-size: calc(var(--CustomHeight)*2.2);
     white-space: nowrap;
 }
 
@@ -74,8 +73,8 @@
 }
 #ZoomAppList {
     position: absolute;
-    height: 6vh;
-    width: 10.8vw;
+    height: calc(var(--CustomHeight)*6);
+    width: calc(var(--CustomWidth)*10.8);
     display: flex;
     right: 0;
     z-index: 9999;
@@ -86,23 +85,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 3.9vw;
+    width: calc(var(--CustomWidth)*3.9);
     /* background: red; */
-    height: 5.2vh;
+    height: calc(var(--CustomHeight)*5.2);
 } 
 
 
 
 #ImportExportUI{
     justify-content: center;
-    height: 5.1vh;
-    width: 7vw;
+    height: calc(var(--CustomHeight)*5.1);
+    width: calc(var(--CustomWidth)*7);
     align-items: center;
     pointer-events: auto;
     display: flex;
     position: absolute;
-    right: 12vw;
-    top: 7vh;
+    right: calc(var(--CustomWidth)*12);
+    top: calc(var(--CustomHeight)*7);
     border: 1px solid #3C495B;
     background: #2C3647;
     border-bottom: none;
@@ -115,13 +114,13 @@
 }
 #ImportExportUI #ImportIcon{   
     height: 67%;
-    width: 1.6vw;
+    width: calc(var(--CustomWidth)*1.6);
     background-size: 100% 100%;
 }
 
 #ImportExportUI #ExportIcon{   
     height: 67%;
-    width: 1.6vw;
+    width: calc(var(--CustomWidth)*1.6);
     background-size: 100% 100%;
 }
 
@@ -132,19 +131,19 @@
 
 #ImportExportUI #UIText{ 
     height: 80%;
-    width: 3.6vw;
+    width: calc(var(--CustomWidth)*3.6);
     /* background: red; */
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2vh;
-    margin-left: 0.5vw;
+    font-size: calc(var(--CustomHeight)*2);
+    margin-left: calc(var(--CustomWidth)*0.5);
 }
 .SharedMask{
     position: absolute;
     pointer-events: auto;
-    height: 100vh;
-    width: 100vw;
+    height: calc(var(--CustomHeight)*100);
+    width: calc(var(--CustomWidth)*100);
     background-color: rgba(0, 0, 0, 0.63);
     display: flex;
     justify-content: center;
@@ -153,8 +152,8 @@
 #SharedMask{
     position: absolute;
     pointer-events: auto;
-    height: 100vh;
-    width: 100vw;
+    height: calc(var(--CustomHeight)*100);
+    width: calc(var(--CustomWidth)*100);
     background-color: rgba(0, 0, 0, 0.63);
     display: flex;
     justify-content: center;
@@ -162,9 +161,9 @@
 }
 #SharedMask .NoticeUI{   
     position: absolute;
-    height: 56vh;
-    width: 40vw;
-    border: 0.3vh solid #17beff;
+    height: calc(var(--CustomHeight)*56);
+    width: calc(var(--CustomWidth)*40);
+    border: calc(var(--CustomHeight)*0.3) solid #17beff;
     background: #171f33;
     border-radius: 7px;
     display: flex;
@@ -173,11 +172,11 @@
 }
 #SharedMask .NoticeUI_OK{    
     position: absolute;
-    height: 5vh;
-    width: 4vw;
+    height: calc(var(--CustomHeight)*5);
+    width: calc(var(--CustomWidth)*4);
     background: #2c3647;
     color: white;
-    font-size: 2.2vh;
+    font-size: calc(var(--CustomHeight)*2.2);
     border-radius: 3px;
     display: flex;
     justify-content: center;
@@ -186,41 +185,42 @@
 }
 #SharedMask .NoticeUI_Icon{
     background-image: url('/image/Share/TipIcon.png');
-    top: 6vh;left: 6vh;
+    top: calc(var(--CustomHeight)*6);
+    left: calc(var(--CustomWidth)*6);
     background-size: 100% 100%;
     position: absolute;
-    height: 3.3vw;
-    width: 3.3vw;
+    height: calc(var(--CustomWidth)*3.3);
+    width: calc(var(--CustomWidth)*3.3);
     color: white;
-    font-size: 2.2vh;
-    border-radius: 1vh;
+    font-size: calc(var(--CustomHeight)*2.2);
+    border-radius: calc(var(--CustomHeight)*1);
 }
 #SharedMask .NoticeUI_Title{
     position: absolute;
-    height: 3.1vh;width: 4.3vw;
+    height: calc(var(--CustomHeight)*3.1);width: calc(var(--CustomWidth)*4.3);
     color: #17beff;
-    font-size: 3vh;
-    border-radius: 1vh;
+    font-size: calc(var(--CustomHeight)*3);
+    border-radius: calc(var(--CustomHeight)*1);
     display: flex;/* background: red; */
     justify-content: center;
-    align-items: center;top: 7.4vh;left: 14vh;
+    align-items: center;top: calc(var(--CustomHeight)*7.4);left: calc(var(--CustomHeight)*14)
 }
 
 #SharedMask .NoticeUI_Content{
-    height: 23.1vh;
+    height: calc(var(--CustomHeight)*23.1);
     width: 82%;
     color: #FFFFFF;
-    font-size: 2.4vh;
-    border-radius: 1vh;
-    line-height: 4vh;
+    font-size: calc(var(--CustomHeight)*2.4);
+    border-radius: calc(var(--CustomHeight)*1);
+    line-height: calc(var(--CustomHeight)*4);
     /* background: red; */
 }
 #SettingBtn{
-    height: 5.1vh;
-    width: 4.1vw;
+    height: calc(var(--CustomHeight)*5.1);
+    width: calc(var(--CustomWidth)*4.1);
     pointer-events: auto;
     position: absolute;
-    right: 12vw;
+    right: calc(var(--CustomWidth)*12);
     background-size: 100% 100%;
     background-image: url('/image/Share/Off/SettingIcon.png');
 }
