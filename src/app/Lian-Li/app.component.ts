@@ -26,7 +26,7 @@ import { AL_DevicePageComponent } from './AL_DeviceFolder/AL_DevicePage';
 // let remote = System._nodeRequire('electron').remote;
 
 @Component({
-    selector: 'sm-app',
+    selector: 'app-selector',
     templateUrl: './app.component.html',
     //template: '<h1>我的第一个 Angular 应用</h1>',
     styleUrls: ['../assets/css/UI.css','../assets/css/Global.css'],
