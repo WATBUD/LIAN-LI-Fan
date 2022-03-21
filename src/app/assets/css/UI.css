@@ -6,7 +6,7 @@
 
 .ControllersItem{
     color: white;
-    width: 7%;
+    width: 7vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,7 +22,7 @@
     right: 0;
     z-index: 9999;
     top: 50%;
-    width: 15.2%;
+    width: 15.2vw;
     border-right-color: rgb(0, 255, 0);
     border-right-style: solid;
     border-right-width: 2px;
@@ -34,43 +34,55 @@
     border-left-width: 2px;
     height: 50%;
 } */
-
+.GroupTextAreaStyle{
+    color: #C9CACA;
+    line-height: 1.8vh;
+    top: 82%;
+    display: flex;
+    width: 32vw;
+    align-items: center;
+    height: 3.9vh;
+    font-size: 1.7vh;
+    background-size: 100% 100%;
+    background-image: url('/image/FanMode/fansInfoText.png');
+    /* border-radius: 0px 0px 8px 8px; */
+}
 .GroupFanTextStyle{
 
-    width: 0.7%;
-    height: 0.7%;
+    width: 0.7vw;
+    height: 0.7vw;
     background-size: 100% 100%;
     background-image: url('/image/FanMode/FanMode_Icon.png');
     pointer-events: none;
-    margin-left: 2%;
+    margin-left: 2vw;
 }
 
 
 .GroupRPMTextStyle{
-    width: 5%;
-    height: 2%;
+    width: 5vw;
+    height: 2vh;
     pointer-events: none;
     white-space: nowrap;
-    margin-left: 0.6%;
+    margin-left: 0.6vw;
 }
 
 .GroupRPMTextIcon{
-    width: 1.1%;
-    height: 1.5%;
+    width: 1.1vw;
+    height: 1.5vh;
     background-size: 100% 100%;
     background-image: url('/image/FanMode/RPM_Icon.png');
     pointer-events: none;
-    margin-left: 0.6%;
+    margin-left: 0.6vw;
 
 }
 
 .GroupLedTextStyle{
     background-size: 100% 100%;
     background-image: url('/image/FanMode/LedMode_Icon.png');
-    width: 1.3%;
-    height: 1.5%;
+    width: 1.3vw;
+    height: 1.5vh;
     pointer-events: none;
-    margin-left: 1%;
+    margin-left: 1vw;
 }
 
 
@@ -80,12 +92,12 @@
     left: 74.6%;
     width: 25%;
     height: 100%;
-    line-height: 3%;
+    line-height: 3vh;
 }
 .RecordAreaBtn{
     outline: none;
-    height: 2.8%;
-    width: 2.8%;
+    height: 2.8vw;
+    width: 2.8vw;
     border: none;
     margin-top: 8%;
 }
@@ -98,9 +110,9 @@
 .LedPartbuttons{
     display: flex;
     width: 100%;
-    line-height: 7%;
+    line-height: 7vh;
     background-size: 100% 100%;
-    margin-top: 1%;
+    margin-top: 1vh;
     justify-content: center;
     /* background-image: url(/image/FanMode/btn01_normal.png); */
 }
@@ -108,8 +120,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 3.1%;
-    height: 2.8%;
+    width: 3.1vw;
+    height: 2.8vw;
     background-size: 100% 100%;
     border: 1px solid rgb(23, 190, 255);
 }
@@ -117,8 +129,8 @@
     background-size: 100% 100%;
     text-align: center;
     background: #2c3647;
-    font-size: 2.1%;
-    line-height: 5.5%;
+    font-size: 2.1vh;
+    line-height: 5.5vh;
     color: #CCCCCC;
     border: 1px solid #3C495B;
     border-radius: 4px;
@@ -129,49 +141,55 @@
 }
 .ApplyUI{
     position: absolute;
-    top: 28.3%;
-    left: 1.8%;
-    width: 6.1%;
-    height: 5.5%;
+    top: 28.3vh;
+    left: 1.8vw;
+    width: 6.1vw;
+    height: 5.5vh;
 }
 .ApplyAllUI{
     position: absolute;
-    top: 28.3%;
-    left: 8.4%;
-    width: 8.5%;
-    height: 5.5%;
+    top: 28.3vh;
+    left: 8.4vw;
+    width: 8.5vw;
+    height: 5.5vh;
 }
 
 .ApplyLong {
     position: absolute;
-    width: 9.4%;
-    top: 28.3%;
-    left: -3.5%;
-    height: 5.5%;
+    width: 9.4vw;
+    top: 28.3vh;
+    left: -3.5vw;
+    height: 5.5vh;
 }
 
 
 
 .DefaultApply{
     position: absolute;
-    top: 28.4%;
-    left: 1.5%;
-    width: 7.3%;
-    height: 5.5%;
+    top: 28.4vh;
+    left: 1.5vw;
+    width: 7.3vw;
+    height: 5.5vh;
 }
 .ColorApply{
     position: absolute;
-    top: 28.4%;
-    left: 9.3%;
-    width: 5.7%;
-    height: 5.5%;
+    top: 28.4vh;
+    left: 9.3vw;
+    width: 5.7vw;
+    height: 5.5vh;
+}
+.FrameDefault {
+    /* position: absolute; */
+    width: 15.5vw;
+    height: 4.5vh;
+    background-size: 100% 100%;
 }
 
 
 .SPDTitleText {
     position: absolute;
-    margin-left: 1%;
-    font-size: 2.5%;
+    margin-left: 1vw;
+    font-size: 2.5vh;
 }
 
 
@@ -186,8 +204,8 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
-    /* width: 1920px;
-    height: 1080px; */
+    width: 1920px;
+    height: 1080px;
     overflow: hidden;
     /* -webkit-clip-path: polygon(50% 0%, 80% 10%, 100% 8%, 100% 70%, 77% 100%, 50% 100%, 23% 100%, 0% 70%, 0 7%, 20% 10%);
     clip-path: polygon(50% 0%, 80% 10%, 100% 8%, 100% 70%, 77% 100%, 50% 100%, 23% 100%, 0% 70%, 0 7%, 20% 10%); */ 
@@ -200,18 +218,29 @@
     -webkit-app-region: drag;
     position: absolute;
     z-index: 95;
-    width: 83%;
-    height: 4%;
+    width: 83vw;
+    height: 4vh;
     opacity: 1;
     /* background-color: #f00; */
+}
+#bodySideAreaUp {
+    position: absolute;
+    display: flex;
+    top: 12.2vh;
+    flex-wrap: wrap;
+    left: 23vw;
+    width: 77vw;    
+    height: 49.7vh;
+    background-color: #0000;
+    box-sizing: border-box;
 }
 
 #OutSideFrame {
     position: absolute;
-    top: 12.2%;
-    left: 23.2%;
-    width: 76.8%;
-    height: 49.7%;
+    top: 12.2vh;
+    left: 23.2vw;
+    width: 76.8vw;
+    height: 49.7vh;
     background-color: #0000;
     box-sizing: border-box;
     pointer-events: none;
@@ -221,18 +250,18 @@
 
   #bodySideAreaDown {
     position: absolute;
-    top: 63.2%;
-    left: 23.5%;
-    width: 77%;
-    height: 37%;
+    top: 63.2vh;
+    left: 23.5vw;
+    width: 77vw;
+    height: 37vh;
   }
 
 #LeftMenu {
     position: absolute;
     float: left;
-    top: 12.1%;
-    width: 22.9%;
-    height: 87%;
+    top: 12.1vh;
+    width: 22.9vw;
+    height: 87vh;
   }
 #switchPageBtn a {
     display: block;
@@ -264,7 +293,7 @@
 
 #Pagebuttons{
     width:100%;
-    height:63vh;
+    height:auto;
     /* background-color: yellow; */
 }
 #Pagebuttons a{
@@ -272,7 +301,7 @@
     display: flex;
     align-items: center;
     width: 100%;
-    height: 8.88%;
+    height: 8.88vh;
     color: #fff;
 }
 
@@ -288,9 +317,9 @@
 /*#region dropsdown*/
 .dropsdownBox{
     position: absolute;
-    top: 2.5%;
+    top: 2.5vh;
     width: 97%;
-    height: 21.8%;
+    height: 21.8vh;
     overflow-y: auto;
     z-index: 9999;
     background-size: 100% 100%;
@@ -298,9 +327,9 @@
 
 .dropsdownBox a{
     display: block;
-    padding-left: 1%;
-    padding-top: 0.2%;
-    font-size: 2.3%;
+    padding-left: 1vw;
+    padding-top: 0.2vw;
+    font-size: 2.3vh;
     color: rgb(255,255,255);
 }
 .dropsdownBox a.hoveritem:hover{
@@ -311,10 +340,10 @@
     overflow: hidden;
 }
 .hoveritem{
-    line-height: 2.5%;
+    line-height: 2.5vh;
 }
 .dropsdownBox::-webkit-scrollbar {
-    width: 1.1%;
+    width: 1.1vh;
 }
 .dropsdownBox::-webkit-scrollbar-thumb {
     border-radius: 10px;
@@ -333,15 +362,15 @@
 
 
 .PolygonFanDown{
-    top: 13.8%;
+    top: 13.8vh;
     /* position: absolute; */
     background-repeat: no-repeat;
     background: rgb(0, 0, 0);
     z-index: 4;
-    width: 7.8%;
-    MARGIN-TOP: 6.6%;
-    height: 4%;
-    margin-left: 0.2%;
+    width: 7.8vw;
+    MARGIN-TOP: 6.6VH;
+    height: 4vh;
+    margin-left: 0.2vw;
     clip-path: polygon(0% 11%, 21% 83%, 80% 83%, 100% 15%, 83% 100%, 21% 100%);
 }
 /*#endregion Polygon*/
@@ -365,18 +394,18 @@ input[type=range] {
   
 #FanInputs input{
     position: absolute;
-    width: 16%;
+    width: 16vw;
     transform-origin: left; 
-    left: 1%;
+    left: 1vw;
     /* transform: rotate(90deg); */
 }
 
 
 .FanBarBG{
-    top: 12.8%;
-    left: 2%;
-    width: 15%;
-    height: 6.6%;
+    top: 12.8vh;
+    left: 2vw;
+    width: 15vw;
+    height: 6.6vh;
     position: absolute;
     background-image: url('/image/FanMode/SliderFan_normal.png');
     background-repeat: no-repeat;
@@ -384,10 +413,10 @@ input[type=range] {
 }
 
 .FanOverBar{
-    top: 12.8%;
-    left: 2%;
-    width: 15%;
-    height: 6.6%;
+    top: 12.8vh;
+    left: 2vw;
+    width: 15vw;
+    height: 6.6vh;
     position:absolute;
     background-image:url('/image/FanMode/SliderFan_over.png');
     background-repeat: no-repeat;
@@ -404,8 +433,8 @@ input[type=range] {
 }
 
 #InputSpeed::-webkit-slider-thumb {
-    height: 1%;
-    width: 1%;
+    height: 1vw;
+    width: 1vw;
     background-color: #17beff;
     border-radius: 15px;
     background-image: url('/image/Share/InputButton.png');
@@ -414,10 +443,10 @@ input[type=range] {
 #InputSpeed {
     position: absolute;
     background-repeat: no-repeat;
-    height: 0.7%;
-    width: 10.5%;
-    margin-top: 4.3%;
-    margin-left: 1%;
+    height: 0.7vh;
+    width: 10.5vw;
+    margin-top: 4.3vh;
+    margin-left: 1vw;
     border-radius: 15px;
     background: -webkit-linear-gradient(#0000, #17beff) no-repeat, #2F2F2E;
     background-size: 0 100%;
@@ -427,8 +456,8 @@ input[type=range] {
 
 
 #InputBright::-webkit-slider-thumb {
-    height: 1%;
-    width: 1%;
+    height: 1vw;
+    width: 1vw;
     background-color: #17beff;
     border-radius: 15px;
     background-image: url('/image/Share/InputButton.png');
@@ -437,10 +466,10 @@ input[type=range] {
 #InputBright {
     position: absolute;
     background-repeat: no-repeat;
-    height: 0.7%;
-    width: 10.5%;
-    margin-top: 4.3%;
-    margin-left: 1%;
+    height: 0.7vh;
+    width: 10.5vw;
+    margin-top: 4.3vh;
+    margin-left: 1vw;
     border-radius: 15px;
     background: -webkit-linear-gradient(#0000, #17beff) no-repeat, #2F2F2E;
     background-size: 0 100%;
@@ -449,29 +478,29 @@ input[type=range] {
 
 
 #ColorSliderH::-webkit-slider-thumb {
-    height: 1.9%;
-    width: 0.4%;
+    height: 1.9vh;
+    width: 0.4vw;
     background: #181F32;
-    border: white 0.01% solid;
+    border: white 0.01vw solid;
     /* background-size: 100% 100%;
     background-image:url('/image/FanMode/colorBarH_ico.png'); */
 
 }
 
 #ColorSliderS::-webkit-slider-thumb {
-    height: 1.9%;
-    width: 0.4%;
+    height: 1.9vh;
+    width: 0.4vw;
     background: #181F32;
-    border: white 0.01% solid;
+    border: white 0.01vw solid;
     /* background-size: 100% 100%;
     background-image:url('/image/FanMode/colorBarH_ico.png'); */
 
 }
 #ColorSliderV::-webkit-slider-thumb {
-    height: 1.9%;
-    width: 0.4%;
+    height: 1.9vh;
+    width: 0.4vw;
     background: #181F32;
-    border: white 0.01% solid;
+    border: white 0.01vw solid;
     background-repeat: no-repeat;
     /* background-size: 100% 100%;
     background-image:url('/image/FanMode/colorBarH_ico.png'); */
@@ -482,27 +511,27 @@ input[type=range] {
 #ColorSliderH{
 
     position: absolute;
-    top: 1.6%;
+    top: 1.6vh;
     left: 9%;
-    width: 15.2%;
-    height: 1.5%;
+    width: 15.2vw;
+    height: 1.5vh;
     background-size: 100% 100%;
     background-image: url('/image/FanMode/colorBarH.png');
 }
 #ColorSliderS{
     position: absolute;
-    top: 3.9%;
+    top: 3.9vh;
     left: 9%;
-    width: 15.2%;
-    height: 1.5%;
+    width: 15.2vw;
+    height: 1.5vh;
     /* background: -webkit-linear-gradient(left,#FFFFFF,black); */
 }
 #ColorSliderV{
     position: absolute;
-    top: 6.2%;
+    top: 6.2vh;
     left: 9%;
-    width: 15.2%;
-    height: 1.5%;
+    width: 15.2vw;
+    height: 1.5vh;
     /* background: -webkit-linear-gradient(left,#FFFFFF,black); */
 }
 
@@ -531,22 +560,22 @@ input[type=range] {
     font-size: 12px;text-transform: uppercase;color:rgb(80,175,228);
 }
 .ConcatenationBtnText{
-    line-height: 2.8%;
-    font-size: 2.3%;
+    line-height: 2.8vw;
+    font-size: 2.3vh;
     text-transform: uppercase;
     color:rgb(255,255,255);
 }
 .ConcatenationBtnIndex{
     border-radius: 6px 1px 1px 6px;
     background: #2C3647;
-    width: 3%;
-    height: 2.8%;
+    width: 3vw;
+    height: 2.8vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    line-height: 6.7%;
+    line-height: 6.7vh;
     text-transform: uppercase;
-    font-size: 2.4%;
+    font-size: 2.4vh;
     color: #B0C3EA;
     border: 1px solid #3c495b;
 }
@@ -554,10 +583,10 @@ input[type=range] {
 #SL_SyncLPB{
     display: flex;
     /* background: red; */
-    width: 15.4%;
-    height: 25%;
-    margin-left: 1.8%;
-    margin-top: 11%;
+    width: 15.4vw;
+    height: 25vh;
+    margin-left: 1.8vw;
+    margin-top: 11vh;
     flex-direction: column;
     align-items: center;
 }
@@ -565,10 +594,10 @@ input[type=range] {
 #SL_LPB{
     display: flex;
     /* background: red; */
-    width: 15.4%;
-    height: 25%;
-    margin-left: 1.8%;
-    margin-top: 11%;
+    width: 15.4vw;
+    height: 25vh;
+    margin-left: 1.8vw;
+    margin-top: 11vh;
     flex-direction: column;
     align-items: center;
 }

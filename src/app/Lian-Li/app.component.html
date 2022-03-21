@@ -6,18 +6,17 @@
     <!-- 背景圖 -->
     <div id="ZoomAppList">
         <div class="cursor ZoomOut" (click)="changeWinSystemTaskBar('minimize')">
-            <img style="width:38%;" src="./image/Share/ZoomOut.png">
+            <img style="width:1vw;" src="./image/Share/ZoomOut.png">
         </div>
         <div class="cursor ZoomIn" (click)="changeWinSystemTaskBar('maximize')">
-            <img style="width:38%;" src="./image/Share/ZoomIn.png">
+            <img style="width:1vw;" src="./image/Share/ZoomIn.png">
         </div>
         <div class="cursor closeProgram" (click)="changeWinSystemTaskBar('leave')">
-            <img style="width:38%;" src="./image/Share/closeProgram.png">
+            <img style="width:1vw;" src="./image/Share/closeProgram.png">
         </div>
     </div>
-    <div id="ShowLoadingMessage" style="position: absolute;height: 100%;z-index: 9999;width: 100%;  
-    margin-top: 0;background: #0000008a;" [style.display]="onLoading?'block':'none'">
-        <img src="./image/Share/Loading.gif" alt="Loading.gif" style="position: absolute;left: 48%;top: 47%;" />
+    <div id="ShowLoadingMessage"  [style.display]="onLoading?'block':'none'">
+        <img src="./image/Share/Loading.gif" alt="Loading.gif" />
     </div>
     <section id="NAV_TOP_UI"
         style="color: white;z-index: 9990;position: absolute;width: 100%;height: 100%;pointer-events: none;"
@@ -33,7 +32,7 @@
                 Export
             </div>
         </div>
-        <div id="ImportExportUI" data-identity="Import" style="right: 3.8%;" (click)="ImportProfile()"
+        <div id="ImportExportUI" data-identity="Import" style="right: 3.8vw;" (click)="ImportProfile()"
             (mouseenter)="ImportUIEnter=true;" (mouseleave)="ImportUIEnter=false;">
             <div id="ImportIcon"
                 [style.backgroundImage]="ImportUIEnter? ImagePath.ImportIcon[0]:ImagePath.ImportIcon[1]">
@@ -45,8 +44,8 @@
         <div id="fanisOnOff_SharedMask" class="SharedMask" [style.display]="GlobalManager.fanisOnOff?'flex':'none'">
         </div>
         <div *ngIf="GlobalManager.Notice_Mes.ConnectError"  data-identity="ConnectError" id="SharedMask" style="z-index: 9999;">
-            <div id="ConnectTip_img" style="width: 96.5%;
-            height: 94%;
+            <div id="ConnectTip_img" style="width: 96.5vw;
+            height: 94vh;
             background-image: url(./image/Share/ConnectTip.png);
             display: flex;
             justify-content: center;
@@ -55,31 +54,31 @@
             
             <div [innerHtml]="this.i18nManager.getTarget('ConnectError1')" style="margin-top: -33%;
             text-align: center;
-            margin-left: -0.9%;
-            line-height: 3%;
-            font-size: 2.4%;">
+            margin-left: -0.9vw;
+            line-height: 3vh;
+            font-size: 2.4vh;">
             </div>
             <div (click)="HyperLinkGO(0)" style="    position: absolute;
             text-decoration: underline;
             margin-top: -12.8%;
             text-align: center;
-            margin-left: -0.9%;
-            line-height: 3%;
-            font-size: 2.4%;">
+            margin-left: -0.9vw;
+            line-height: 3vh;
+            font-size: 2.4vh;">
                 {{this.i18nManager.getTarget('HyperLink')}}
             </div>
             <div [innerHtml]="this.i18nManager.getTarget('ConnectError2')" style="position: absolute;
             margin-top: -9.3%;
             text-align: center;
-            margin-left: -0.9%;
-            line-height: 3%;
-            font-size: 2.4%;">
+            margin-left: -0.9vw;
+            line-height: 3vh;
+            font-size: 2.4vh;">
             </div>
                 <div id="ConnectTip_Title" 
                 style="position: absolute;
                 color: #17beff;
-                font-size: 3%;
-                border-radius: 1%;
+                font-size: 3vh;
+                border-radius: 1vh;
                 top: 11.7%;
                 left: 49%;
                 display: flex;
@@ -90,9 +89,9 @@
                 bottom: 9%;
                 left: 29%;
                 width: auto;
-                height: 4.3%;
-                padding-left: 2%;
-                padding-right: 2%;
+                height: 4.3vh;
+                padding-left: 2vw;
+                padding-right: 2vw;
                 display: flex;
                 align-items: center;" (click)="RestartApp()">
                     {{i18nManager.getTarget('ControllerRestart')}}
@@ -101,9 +100,9 @@
                 bottom: 9%;
                 left: 59%;
                 width: auto;
-                height: 4.3%;
-                padding-left: 1.4%;
-                padding-right: 1.5%;
+                height: 4.3vh;
+                padding-left: 1.4vw;
+                padding-right: 1.5vw;
                 display: flex;
                 align-items: center;" (click)="QuitApp()">
                     {{i18nManager.getTarget('Quit')}}
@@ -123,10 +122,10 @@
                 <div class="NoticeUI_Title">{{this.i18nManager.getTarget('Notice')}}</div>
                 <div class="NoticeUI_Content">       
                     <span [innerHtml]="this.i18nManager.getTarget('InitExportTip')" ></span>
-                    <div style="align-items: center;display: flex;margin-top: 1%;">
+                    <div style="align-items: center;display: flex;margin-top: 1vw;">
                         <input type="checkbox" [(ngModel)]="GlobalManager.SettingData.notShowAgainExport" />
                         <span
-                            style="margin-left: 2%;font-size: 2.1%;">{{this.i18nManager.getTarget('DoNotShowAgain')}}</span>
+                            style="margin-left: 2%;font-size: 2.1vh;">{{this.i18nManager.getTarget('DoNotShowAgain')}}</span>
                     </div>
                 </div>
             </div>
@@ -142,10 +141,10 @@
                 <div class="NoticeUI_Title">{{this.i18nManager.getTarget('Notice')}}</div>
                 <div class="NoticeUI_Content">       
                     <span [innerHtml]="this.i18nManager.getTarget('StaticMax48Tip')" ></span>
-                    <div style="align-items: center;display: flex;margin-top: 1%;">
+                    <div style="align-items: center;display: flex;margin-top: 1vw;">
                         <input type="checkbox" [(ngModel)]="GlobalManager.notShowAgainStaticTip" />
                         <span
-                            style="margin-left: 2%;font-size: 2.1%;">{{this.i18nManager.getTarget('DoNotShowAgain')}}</span>
+                            style="margin-left: 2%;font-size: 2.1vh;">{{this.i18nManager.getTarget('DoNotShowAgain')}}</span>
                     </div>
                 </div>
             </div>
@@ -161,13 +160,13 @@
                 <div class="NoticeUI_Title">{{this.i18nManager.getTarget('Notice')}}</div>
                 <div class="NoticeUI_Content">   
                     <span [innerHtml]="this.i18nManager.getTarget('SyncTipMessage')" ></span>
-                    <div style="align-items: center;display: flex;margin-top: 1%;">
+                    <div style="align-items: center;display: flex;margin-top: 1vw;">
                     </div>
                 </div>
             </div>
         </div>
         <div id="SyncOnOffArea">
-            <div id="en_同步主板" style="line-height: 117.7%;"
+            <div id="en_同步主板" style="    line-height: 2.7vh;"
                 [style.display]="i18nManager.onUsingLangindex==0?'block': 'none'">
                 MotherBoard<br>
                 SoftWare Sync
@@ -184,12 +183,12 @@
         </div>
         <div id="DeviceControllers" style="
             position: absolute;
-            height: 5%;
+            height: 5vh;
             width: auto;
             display: flex;
-            left: 24%;
-            top: 7.2%;
-            font-size: 2.1%;
+            left: 24vw;
+            top: 7.2vh;
+            font-size: 2.1vh;
             pointer-events: auto;
             /* background: red; */
         ">
@@ -210,15 +209,15 @@
         class="">
 
 
-        <div style="position: absolute;height: 75%;width: 72%;display: flex;color: #FFFFFF;">
+        <div style="position: absolute;height: 75vh;width: 72vw;display: flex;color: #FFFFFF;">
             <div data-identity="Title" style="    justify-content: center;
-            height: 14.6%;
+            height: 14.6vh;
             align-items: center;
             pointer-events: auto;
             display: flex;
             position: absolute;
             width: 20%;
-            font-size: 2.4%;
+            font-size: 2.4vh;
                                             ">
 
                 <img id="SettingBtn_img" src="./image/SW_Icon.png" style="width: 18%;
@@ -228,12 +227,12 @@
             <div id="SettingVersionTitle" style="position: absolute;
                                                 top: 8%;
                                                 left: 26%;
-                                                font-size: 1.5%;
+                                                font-size: 1.5vh;
                                             ">{{i18nManager.getTarget('SETTINGS')}}</div>
             <div id="SettingVersion" style="position: absolute;
                                     bottom: 5.5%;left: 3%;
                                     color:#B3B3B4;
-                                    font-size: 1.8%;">{{i18nManager.getTarget('Version')+" "+GlobalManager.SettingData.version}}
+                                    font-size: 1.8vh;">{{i18nManager.getTarget('Version')+" "+GlobalManager.SettingData.version}}
             </div>
 
             <div style="height: 100%;width: 20%;display: flex;background: #292E41;">
@@ -243,7 +242,7 @@
                             style="width: 100%;height: 100%;display: flex;align-items: center;background: #17BEFF;/* color: #FFFFFF; */">
                             <div style="
                                 margin-left: 25%;
-                                font-size: 2%;
+                                font-size: 2vh;
                             ">{{i18nManager.getTarget('GENERAL')}}
                             </div>
                         </div>
@@ -252,7 +251,7 @@
             </div>
             <div id="Setting_RightArea" style="height: 100%;width: 80%;display: flex;background: #171F33;">
                 <div id="AutoRunSetting"
-                    style="height: 73%;width: 86%;display: flex;margin-top: 14%;margin-left: 8%;font-size: 2.1%;">
+                    style="height: 73%;width: 86%;display: flex;margin-top: 14%;margin-left: 8%;font-size: 2.1vh;">
                     <div
                         style="width: 100%;height: 13%;justify-content: center;align-items: center;display: flex;border-bottom: 3px solid #323949;box-sizing: content-box;">
                         <div [style.color]="GlobalManager.SettingData.AutoRunOnBoot?'white':'#b3b3b4'"
@@ -267,7 +266,7 @@
                                                 background-repeat: no-repeat;
                                                 background-image: url(./image/Share/OnOffUI_1.png);
                                                 background-size: 100% 100%;
-                                                margin-left: 1%;" (click)="GlobalManager.switchAutoRunOnBoot();">
+                                                margin-left: 1vw;" (click)="GlobalManager.switchAutoRunOnBoot();">
                         </div>
 
                         <div id="RightArea_Item"
@@ -279,11 +278,11 @@
                 </div>
                 <div class="BtnDefault" id="Apply_Close" style="position: absolute;
                 bottom: 6%;
-                left: 39.8%;
+                left: 39.8vw;
                 width: auto;
-                height: 6%;
-                padding-left: 1%;
-                padding-right: 1%;" (click)="switchSettingPage(false);">
+                height: 6vh;
+                padding-left: 1vw;
+                padding-right: 1vw;" (click)="switchSettingPage(false);">
                     {{i18nManager.getTarget('Apply_Close')}}
                 </div>
             </div>
@@ -295,8 +294,8 @@
 
         <div id="LOGO" style="position: absolute;
     z-index: 0;
-    top: 4%;
-    left: 3.9%;
+    top: 4vh;
+    left: 3.9vw;
     width: 11.55%;
     height: 4.65%;
     background-size: 100% 100%;
@@ -313,9 +312,9 @@
                     <div 
                     style="    position: absolute;
                     pointer-events: none;
-                    margin-left: 16.9%;
-                    width: 7.3%;
-                    height: 3.4%;
+                    margin-left: 3.9vw;
+                    width: 2vw;
+                    height: 2vw;
                     background-size: 100% 100%;
                     font-style: normal;"  
                     [style.backgroundImage]="item.imagePath" >    
@@ -324,9 +323,9 @@
                     </div>
 
                     <div style="    pointer-events: none;
-                    margin-left: 34%;
-                    line-height: 8.88%;
-                    font-size: 1.5%;
+                    margin-left: 7vw;
+                    line-height: 8.88vh;
+                    font-size: 1.5vw;
                     font-weight: bold;">{{item.name}}
                     </div>
 
@@ -337,26 +336,27 @@
 
         <SL_DevicePage [style.display]="switchPageBtn[0].check?'block':'none'" style="display: flex;
     position: absolute;
-    width: 77%;
-    height: 88%;
+    width: 77vw;
+    height: 88vh;
     margin: 0;
-    margin-left: 23%;
-    margin-top: 12.3%;
+    margin-left: 23vw;
+    margin-top: 12.3vh;
     /* background: red; */
     ">
         </SL_DevicePage>
 
-    <AL_DevicePage [style.display]="switchPageBtn[1].check?'block':'none'" style="display: flex;
+        <AL_DevicePage [style.display]="switchPageBtn[1].check?'block':'none'" style="display: flex;
     position: absolute;
-    width: 77%;
-    height: 87.4%;
-    left: 23%;
-    top: 12.6%;
+    width: 77vw;
+    height: 88vh;
+    margin: 0;
+    margin-left: 23vw;
+    margin-top: 12.3vh;
     /* background: red; */
     ">
-    </AL_DevicePage>
+        </AL_DevicePage>
 
-    <!-- 
+        <!-- 
     <section *ngIf="switchPageBtn[0].check">      
 
     </section> -->

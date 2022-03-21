@@ -1,26 +1,47 @@
+:host{
+    --CustomWidth: 960px;
+    --CustomHeight: 540px;
+    --TSTTTTT: 540;
+    position: absolute;
+    width: var(--CustomWidth);
+    height: var(--CustomHeight);
+    background: rgb(255 0 0);
+}
+
+#ShowLoadingMessage{
+    position: absolute;
+    height: 100%;
+    z-index: 9999;
+    width: 100%;
+    background: rgb(0 0 0 / 54%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #SybcOnUI{
-    height: 57.16%;
-    width: 16.84%;
+    height: calc(var(--CustomHeight)*0.032);
+    width:  calc(var(--CustomWidth)*0.032);
     background-size: 100% 100%;
     background-image: url('/image/Share/OnOffUI_1.png');
     pointer-events: auto;
-    margin-left: 10%;
+    margin-left: calc(var(--CustomWidth)*0.01);
 }
 #UItext_isOnOf{
-    line-height: 2.5%;
-    margin-left: 10%;
+    line-height: 2.5vh;
+    margin-left: 1vw;
 }
 #SyncOnOffArea{
     justify-content: center;
-    height: 5.6%;
-    width: 19%;
+    height: 5.6vh;
+    width: 19vw;
     align-items: center;
     pointer-events: auto;
     display: flex;
     position: absolute;
-    bottom: 2%;
-    left: 2%;
-    font-size: 2.2%;
+    bottom: 2vh;
+    left: 2vw;
+    font-size: 2.2vh;
     white-space: nowrap;
 }
 
@@ -53,8 +74,8 @@
 }
 #ZoomAppList {
     position: absolute;
-    height: 6%;
-    width: 10.8%;
+    height: 6vh;
+    width: 10.8vw;
     display: flex;
     right: 0;
     z-index: 9999;
@@ -65,22 +86,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 33.4%;
-    height: 86.7%;
+    width: 3.9vw;
+    /* background: red; */
+    height: 5.2vh;
 } 
 
 
 
 #ImportExportUI{
     justify-content: center;
-    height: 5.1%;
-    width: 7%;
+    height: 5.1vh;
+    width: 7vw;
     align-items: center;
     pointer-events: auto;
     display: flex;
     position: absolute;
-    right: 12%;
-    top: 7%;
+    right: 12vw;
+    top: 7vh;
     border: 1px solid #3C495B;
     background: #2C3647;
     border-bottom: none;
@@ -92,14 +114,14 @@
 
 }
 #ImportExportUI #ImportIcon{   
-    height: 64%;
-    width: 25%;
+    height: 67%;
+    width: 1.6vw;
     background-size: 100% 100%;
 }
 
 #ImportExportUI #ExportIcon{   
-    height: 64%;
-    width: 25%;
+    height: 67%;
+    width: 1.6vw;
     background-size: 100% 100%;
 }
 
@@ -110,19 +132,19 @@
 
 #ImportExportUI #UIText{ 
     height: 80%;
-    width: 63%;
+    width: 3.6vw;
     /* background: red; */
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2%;
-    margin-left: 0.5%;
+    font-size: 2vh;
+    margin-left: 0.5vw;
 }
 .SharedMask{
     position: absolute;
     pointer-events: auto;
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
     background-color: rgba(0, 0, 0, 0.63);
     display: flex;
     justify-content: center;
@@ -131,8 +153,8 @@
 #SharedMask{
     position: absolute;
     pointer-events: auto;
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
     background-color: rgba(0, 0, 0, 0.63);
     display: flex;
     justify-content: center;
@@ -140,9 +162,9 @@
 }
 #SharedMask .NoticeUI{   
     position: absolute;
-    height: 56%;
-    width: 40%;
-    border: 0.3% solid #17beff;
+    height: 56vh;
+    width: 40vw;
+    border: 0.3vh solid #17beff;
     background: #171f33;
     border-radius: 7px;
     display: flex;
@@ -151,11 +173,11 @@
 }
 #SharedMask .NoticeUI_OK{    
     position: absolute;
-    height: 5%;
-    width: 4%;
+    height: 5vh;
+    width: 4vw;
     background: #2c3647;
     color: white;
-    font-size: 2.2%;
+    font-size: 2.2vh;
     border-radius: 3px;
     display: flex;
     justify-content: center;
@@ -164,41 +186,41 @@
 }
 #SharedMask .NoticeUI_Icon{
     background-image: url('/image/Share/TipIcon.png');
-    top: 6%;left: 6%;
+    top: 6vh;left: 6vh;
     background-size: 100% 100%;
     position: absolute;
-    height: 3.3%;
-    width: 3.3%;
+    height: 3.3vw;
+    width: 3.3vw;
     color: white;
-    font-size: 2.2%;
-    border-radius: 1%;
+    font-size: 2.2vh;
+    border-radius: 1vh;
 }
 #SharedMask .NoticeUI_Title{
     position: absolute;
-    height: 3.1%;width: 4.3%;
+    height: 3.1vh;width: 4.3vw;
     color: #17beff;
-    font-size: 3%;
-    border-radius: 1%;
+    font-size: 3vh;
+    border-radius: 1vh;
     display: flex;/* background: red; */
     justify-content: center;
-    align-items: center;top: 7.4%;left: 14%;
+    align-items: center;top: 7.4vh;left: 14vh;
 }
 
 #SharedMask .NoticeUI_Content{
-    height: 23.1%;
+    height: 23.1vh;
     width: 82%;
     color: #FFFFFF;
-    font-size: 2.4%;
-    border-radius: 1%;
-    line-height: 4%;
+    font-size: 2.4vh;
+    border-radius: 1vh;
+    line-height: 4vh;
     /* background: red; */
 }
 #SettingBtn{
-    height: 5.1%;
-    width: 4.1%;
+    height: 5.1vh;
+    width: 4.1vw;
     pointer-events: auto;
     position: absolute;
-    right: 12%;
+    right: 12vw;
     background-size: 100% 100%;
     background-image: url('/image/Share/Off/SettingIcon.png');
 }
